@@ -9,8 +9,12 @@
 		</style>
 	</head>
 	<body>
-		Hallo! Ik ben controller <b>Home</b> (home.php), dat komt omdat ik ben ingesteld in <b>/application/config/routes.php</b> als beginpagina :)<br><br>
-		Je bevind je in in de <b>home()</b> methode van deze class.. Dit is.. eh. omdat dat standaard is :')<br><br>
-		<a href="/register/">Klik hier om te registreren</a>
+		Welkom bij Konsciogame.<br><bR>
+		<h2>Inloggen</h2>
+		<form method="post">
+			Username <input type="text" name="username" /><br>
+			Password <input type="password" name="password" /><br>
+			<input type="submit" value="Inloggen" />
+		</form>
 	</body>
 </html>

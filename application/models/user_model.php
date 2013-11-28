@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 	
-class Users_model extends CI_Model
+class User_model extends CI_Model
 {
 	function __construct()
 	{
@@ -10,7 +10,7 @@ class Users_model extends CI_Model
 	
 	function getUserDetails($user_id)
 	{
-		$sql = "SELECT * FROM user WHERE user_id = ? LIMIT 1";
+		$sql = "SELECT * FROM users WHERE user_id = ? LIMIT 1";
 		
 		$result = $this->db->query($sql, $user_id);
 		$row = $result->row_array(); 
@@ -18,9 +18,30 @@ class Users_model extends CI_Model
 		return $row;
 	}
 	
+	function checkUserLogin($username, $password)
+	{
+		$sql = "SELECT id FROM users WHERE email = ? AND password = ?";
+		
+		$query_values = array($username,sha1("konscio".md5($password)."game"));
+		
+		$result = $this->db->query($sql, $query_values);
+		
+		if($result->num_rows() > 0)
+		{
+			$ret = $result->row();
+			
+			return $ret->id;
+		}
+		else
+		{
+			return 0;
+		}
+		
+	}
+	
 	function setUserDetails($details)
 	{
-		$sql = "UPDATE user SET `email` = ? , `password` = ? WHERE `id` = ? ";
+		$sql = "UPDATE users SET `email` = ? , `password` = ? WHERE `id` = ? ";
 		
 		$query_values = array($details['email'], $details['password'], $details['id']);
 		
