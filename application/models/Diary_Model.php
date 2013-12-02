@@ -22,13 +22,17 @@ class Diary_Model extends CI_Model
 	function setDiaryDetails($details)
 	{
 	/*
-		$sql = "UPDATE avatar SET `energy` = ?, `mood` = ?, `score` = ?, `day` = ? WHERE user_id = ?";
+		wordt niet gebruikt
+	*/
+	}
+	
+	function addDiaryDetails($details)
+	{
+		$sql = "UPDATE diary SET `consumption_id` = ? , `location` = ? `day` = ? , `time` = ? WHERE `id` = ? ";
 		
-		$query_values = array($details['energy'], $details['mood'], $details['score'], $details['day'], $details['user_id']);
+		$query_values = array($details['consumption_id'], $details['location'], $details['day'], $details['time']);
 		
 		return $this->db->query($sql, $query_values);
-	*/
-		
 	}
 }
 ?>
