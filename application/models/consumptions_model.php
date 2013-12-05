@@ -22,7 +22,7 @@ class consumptions_model extends CI_Model
 	{
 		$sql = "SELECT * FROM consumptions";
 		
-		return $sql;
+		return $this->db->query($sql);
 	}
 }
 ?>

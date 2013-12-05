@@ -41,11 +41,11 @@ class Diary_Model extends CI_Model
 		return $this->db->query($sql, $query_values);
 	}
 	
-	function addDiaryDetails($details)
+	function addDiaryDetails($consumption_id, $location, $day, $time)
 	{
-		$sql = "UPDATE diary SET `consumption_id` = ? , `location` = ? `day` = ? , `time` = ? WHERE `id` = ? ";
+		$sql = "INSERT INTO diary (`user_id`,`consumption_id`, `location`, `day`, `time`) VALUES (?,?,?,?,?)";
 		
-		$query_values = array($details['consumption_id'], $details['location'], $details['day'], $details['time']);
+		$query_values = array($this->session->userdata('user_id'),$consumption_id, $location, $day, $time);
 		
 		return $this->db->query($sql, $query_values);
 	}
