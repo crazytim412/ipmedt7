@@ -27,7 +27,13 @@ class Bedroom extends CI_Controller {
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
 			$this->load->model("Diary_Model");
-			$this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);	
+			$this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+			
+			$day = $this->diary_model->getDay($data['avatar_details']['user_id']);
+			
+			$newDay = $day++;
+			
+			$this->diary_model->setDay($newDay);
 			
 			$this->load->view("town",$data);
 		}

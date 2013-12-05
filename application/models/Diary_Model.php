@@ -16,11 +16,29 @@ class Diary_Model extends CI_Model
 		$result = $this->db->query($sql, $user_id);
 	}
 	
-	function setDiaryDetails($details)
+	function getDay($user_id)
 	{
-	/*
-		wordt niet gebruikt
-	*/
+		$sql = "SELECT day FROM avatar WHERE `id` = ? ";
+		
+		$result = $this->db->query($sql, $user_id);
+		
+		if($result->num_rows(); > 0)
+		{
+			$row = $query->row();
+			
+			$day->'day';
+		}
+		
+		return $day;
+	}
+	
+	function setDay($newDay)
+	{
+		$sql = "UPDATE diary SET `day` = ? WHERE `id` = ? ";
+		
+		$query_values = array($details['day'], $details['id']);
+		
+		return $this->db->query($sql, $query_values);
 	}
 	
 	function addDiaryDetails($details)
