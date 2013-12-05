@@ -14,9 +14,6 @@ class Diary_Model extends CI_Model
 		$sql = "SELECT * FROM diary WHERE user_id = ? LIMIT 1";
 		
 		$result = $this->db->query($sql, $user_id);
-		$row = $result->row_array(); 
-		
-		return $row;
 	}
 	
 	function setDiaryDetails($details)
@@ -33,6 +30,16 @@ class Diary_Model extends CI_Model
 		$query_values = array($details['consumption_id'], $details['location'], $details['day'], $details['time']);
 		
 		return $this->db->query($sql, $query_values);
+	}
+	
+	function getTotalMoodAffection($user_id, $day)
+	{
+		$sql = "SELECT SUM(c.health_affection)
+				FROM diary d 
+				JOIN consumptions c ON d.consumption_id = c.id
+					WHERE d.user_id = ? and d.day = ?";
+		
+		$result = $this->db->query($sql, array($user_id, $day));
 	}
 }
 ?>
