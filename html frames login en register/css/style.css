@@ -1,0 +1,226 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: arial;
+	background: #eaeaea;
+}
+
+#frame{
+	margin: 50px auto;
+	width: 1024px; height: 768px;
+	border: 15px solid black ;
+	background: #574951;
+	/*background: red url('../img/bg3.jpg');*/
+}
+
+#header{
+	height: 96px;
+	width: 100%;
+	background: #1C0113;
+	/*background: url('../img/headerBg.jpg') repeat-x;*/
+}
+
+#logo{
+	width: 234px; height: 90px;
+	margin: 5px auto;
+	float: left;
+	background: url('../img/logo.png'); background-repeat:no-repeat ;
+	
+}
+
+#humeur{
+	font-family: calibri; font-size: 15px;
+	height: 90px; width: 157px;
+	float: left;
+	background: #1C0113; color:#F03C02;
+	text-align: right;
+	vertical-align: middle;
+	line-height: 90px; 
+}
+
+#humeurTotal{
+	font-size: 35px; color: #F03C02;
+}
+
+
+
+#gezondheid{
+	font-family: calibri; text-align: right;
+	height: 90px; width: 140px; 
+	font-size: 15px;
+	color:#F03C02; background: #1C0113;
+	float: left;
+	vertical-align: middle;
+	line-height: 90px; 
+}
+
+#gezondheidTotal{
+	font-size: 35px;
+	color: #F03C02;
+}
+
+
+#dag{
+	font-family: calibri; font-size: 15px; text-align: center;
+	height: 90px; width: 117px;
+	color:#F03C02;
+	float: left;
+	background: #1C0113;
+	vertical-align: middle;
+	line-height: 90px; 
+}
+
+#dagTotal{
+	font-size: 35px; color: #F03C02;
+}
+
+
+#stats{
+	font-family: calibri;
+	margin: 30px 0px 0px 30px;
+	height: 40px; width: 350px;
+	font-size: 15px;
+	float: left;
+}
+
+#score{
+	width: 187px; height: 90px;
+	color:#F03C02; background: #1C0113;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 85px; 
+
+
+}
+
+#scoreTotal{
+	font-size: 40px;
+}
+
+#optionsBut{
+	height: 90px; width: 131px;
+	background: brown;
+	float: right;
+	background: url('../img/menu.png') center left;
+	background-repeat:no-repeat ;
+	
+}
+
+#stats ul{
+	font-family: calibri; font-size: 16px;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#stats ul li{
+	padding: 0px;
+	margin: 0px 0px 0px 20px;
+	display: inline;
+	text-align: center;
+	vertical-align: middle;
+
+}
+
+#energymeter{
+	width: 175px; height: 350px;
+	float: right;
+	overflow: hidden;
+	background: url('../img/meter.png') center;
+	background-repeat:no-repeat ;
+
+
+}
+
+#vierkant { width: 1024px; height: 280px; background: #3A111C; 
+		margin: 392px 0px 0px 0px;
+}
+
+#vierkant2{
+	width: 100px; height: 280px; background: red; 
+		margin: 392px 0px 0px 0px;
+}
+
+/*login scherm*/
+
+#frameLogin{
+	width: 1024px; 
+	height: 768px;
+	background: url('../img/loginframebg.jpg');
+	position: absolute;
+}
+
+#orangeBox{
+	background: #ff8f00 url('../img/loginlogo.png') -220px -203px no-repeat;
+	width: 324px;
+	border-radius: 2px;
+	margin: 290px auto 0px auto;
+	padding: 20px 0px 32px 80px;
+}
+
+#orangeBox h1{
+	margin: 0px;
+	padding: 0px;
+	font-size: 26px;
+	color: #fff;
+}
+
+#orangeBox table{
+	margin: 0px auto;
+}
+
+#orangeBox input{
+	margin: 12px 0px 0px 0px;
+	color: #868686;
+	font-size: 18px;
+	padding: 5px 10px;
+	height: 26px;
+	width: 244px;
+	border: none;
+	border-top: 1px solid #e7bd88;
+	border-right: 1px solid #e7bd88;
+}
+
+#welcomeMsg{
+	font-size: 14px;
+	color: #fff;
+	height: 200px;
+	width: 660px;
+	margin: 75px auto 0px auto;
+}
+
+#welcomeMsg h1{
+	font-size: 24px;
+	font-weight: 300;
+	margin: 0px;
+	padding: 0px;
+}
+
+.link1{
+	margin: -20px 0px 0px -40px;
+}
+
+.link1 a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.link1 a:hover{
+	text-decoration: underline;
+}
+
+#orangeBox .but1{
+	float: right;
+	color: #fff;
+	cursor: pointer;
+	width: 127px;
+	height: 49px;
+	background: url('../img/but1.jpg');
+}
+
+#orangeBox .but1:hover{
+	background: url('../img/but1_hov.jpg');
+}
