@@ -1,3 +1,4 @@
+<?php $this->load->view("common/header");?>
 <div id="frameLogin">
     <div id="hugeLogo"></div>
     <div id="orangeBox">
@@ -8,10 +9,19 @@
                     <td><input name="email" value="" type="text" placeholder="E-mailadres" /></td>
                 </tr>
                 <tr>
-                    <td><input name="wachtwoord" value="" type="password" placeholder="Wachtwoord" /></td>
+                    <td><input name="password" value="" type="password" placeholder="Wachtwoord" /></td>
                 </tr>
                 <tr>
-                    <td><input name="wachtwoord" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
+                    <td><input name="password" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
+                </tr>
+				<tr>
+                    <td><input name="day" value="" type="number" min="1" max="31" placeholder="Geboorte Dag" /></td>
+                </tr>
+				<tr>
+                    <td><input name="month" value="" type="number" min="1" max="12" placeholder="Geboorte Maand" /></td>
+                </tr>
+				<tr>
+                    <td><input name="year" value="" type="number" min="1900" max="1998" placeholder="Geboorte Jaar" /></td>
                 </tr>
                 <tr>
                     <td><input class="but1" type="submit" value="Verzenden" /></td>
@@ -23,3 +33,4 @@
         </div>
     </div>
 </div>
+<?php $this->load->view("common/footer");?>
