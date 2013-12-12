@@ -54,7 +54,8 @@ class Home extends CI_Controller {
 				else
 				{
 					// De login gegevens kloppen niet...
-					print "verkeerde inloggegevens";
+					$data['error'] = "De ingevoerde inloggegevens kwamen niet overeen met onze database!";
+					$this->load->view("home", $data);
 				}
 			}
 			// Toon het inlogformulier

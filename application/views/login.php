@@ -1,19 +1,16 @@
-<?php $this->load->view("common/header");?>
 <div id="frameLogin">
     <div id="hugeLogo"></div>
-    <?php if(@$error):?>
-    <div class="error">
-    <?php echo $error; ?>
-    </div>
-    <?php endif; ?>
     <div id="orangeBox">
         <form action="" method="POST">
+			<?php if(@$error):?>
+            <h2><?php echo $error; ?></h2>
+            <?php endif; ?>
             <table>
                 <tr>
-                    <td><input type="text" placeholder="E-mailadres" name="username" /></td>
+                    <td><input name="accountnaam" value="" type="text" placeholder="Gebruikersnaam" /></td>
                 </tr>
                 <tr>
-                    <td><input type="password" placeholder="Wachtwoord" name="password" /></td>
+                    <td><input name="wachtwoord" value="" type="password" placeholder="Wachtwoord" /></td>
                 </tr>
                 <tr>
                     <td><input class="but1" type="submit" value="Inloggen" /></td>
@@ -21,11 +18,12 @@
             </table>
         </form>
         <div class="link1">
-            <a href="/register">Nog geen account?</a>
+            <a href="register.html">Nog geen account?</a>
         </div>
     </div>
     <div id="welcomeMsg">
         <h1>Speel gratis deze alcohol & drugs sim, registreer je direct!</h1>
+    
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -33,4 +31,3 @@
         </p>
     </div>
 </div>
-<?php $this->load->view("common/footer");?>
