@@ -1,16 +1,25 @@
-<html>
-	<head>
-		<title>Register</title>
-		<style type="text/css">
-			body{
-				font-family: "Helvetica Neue", "Helvetica", sans-serif;
-				font-size: 12px;
-			}
-		</style>
-	</head>
-	<body>
-		Hallo! Ik ben controller <b>Register</b> (register.php), dat komt omdat er /register/ in de url staat<br><br>
-		Je bevindt je in in de home() methode van deze class<br><br>
-		<a href="/register/save/bert/aids/">Klik hier om je registratie te voltooien</a>
-	</body>
-</html>
+<div id="frameLogin">
+    <div id="hugeLogo"></div>
+    <div id="orangeBox">
+        <h1>Registreren</h1>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td><input name="email" value="" type="text" placeholder="E-mailadres" /></td>
+                </tr>
+                <tr>
+                    <td><input name="wachtwoord" value="" type="password" placeholder="Wachtwoord" /></td>
+                </tr>
+                <tr>
+                    <td><input name="wachtwoord" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
+                </tr>
+                <tr>
+                    <td><input class="but1" type="submit" value="Verzenden" /></td>
+                </tr>
+            </table>
+        </form>
+        <div class="link1">
+            <a href="login.html">Ik heb al een account.</a>
+        </div>
+    </div>
+</div>
