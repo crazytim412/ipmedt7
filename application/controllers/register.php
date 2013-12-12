@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Registreer extends CI_Controller {
+class Register extends CI_Controller {
 
 	public function index()
 	{	
@@ -15,15 +15,17 @@ class Registreer extends CI_Controller {
 			
 			$password = $this->input->post("password");
 			
-			$birthdate = $year."".$month."".$day;
+			$birthdate = $year."-".$month."-".$day;
 			
-			$hashpassword = sha1("konscio".md5($password)."game");
+			$hashedpassword = sha1("konscio".md5($password)."game");
 			
-			$details = $this->user_model->setUserLogin($this->input->post("email"), $this->input->post($hashedpassword), $this->input->post($birthdate));
+			$this->user_model->setUserDetails($this->input->post("email"), $hashedpassword, $birthdate);
+			
+			$this->load->view("register");
 		}
 		else
 		{
-			$this->load->view("registreer");
+			$this->load->view("register");
 		}
 	}
 }
