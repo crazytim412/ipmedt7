@@ -9,10 +9,10 @@
                     <td><input name="email" value="" type="text" placeholder="E-mailadres" /></td>
                 </tr>
                 <tr>
-                    <td><input name="password" value="" type="password" placeholder="Wachtwoord" /></td>
+                    <td><input name="passwordnormaal" value="" type="password" placeholder="Wachtwoord" /></td>
                 </tr>
                 <tr>
-                    <td><input name="password" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
+                    <td><input name="passwordherhaal" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
                 </tr>
 				<tr>
                     <td><input name="day" value="" type="number" min="1" max="31" placeholder="Geboorte Dag" /></td>
@@ -21,7 +21,7 @@
                     <td><input name="month" value="" type="number" min="1" max="12" placeholder="Geboorte Maand" /></td>
                 </tr>
 				<tr>
-                    <td><input name="year" value="" type="number" min="1900" max="1998" placeholder="Geboorte Jaar" /></td>
+                    <td><input name="year" value="" type="number" min="1900" max="2014" placeholder="Geboorte Jaar" /></td>
                 </tr>
                 <tr>
                     <td><input class="but1" type="submit" value="Verzenden" /></td>
@@ -29,7 +29,7 @@
             </table>
         </form>
         <div class="link1">
-            <a href="login.html">Ik heb al een account.</a>
+            <a href="index.php/login">Ik heb al een account.</a>
         </div>
     </div>
 </div>

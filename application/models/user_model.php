@@ -35,22 +35,24 @@ class User_model extends CI_Model
 		else
 		{
 			return 0;
-		}
-		
+		}	
 	}
 	
 	function setUserDetails($email, $hashedpassword, $birthdate)
 	{
-		$sql = "SELECT email FROM user WHERE email = ?";
+		$sql = "SELECT email FROM users WHERE email = ?";
 		$result = $this->db->query($sql, $email);
 		
-		if($result->num_rows() = 0)
+		if($result->num_rows() == 0)
 		{
-			$sql = "INSERT users SET `email` = ? , `password` = ?, `birthdate` = ?, `register_date` = ?";
+			$sql = "INSERT INTO users (`email`,`password`, `birthdate`, `register_date`) VALUES (?,?,?,?)";
+			/*$sql = "INSERT INTO users VALUES `email` = ?, `password` = ?, `birthdate` = ?, `register_date` = ?";*/
 		
-			$query_values = array($details['email'], $details['hashedpassword'], $details['birthdate'], time());
+			$query_values = array($email, $hashedpassword, $birthdate, time());
 		
 			return $this->db->query($sql, $query_values);
+			
+			echo($birthdate);
 		}
 		else
 		{
