@@ -8,6 +8,8 @@ class Location extends CI_Controller {
 		if($this->session->userdata("user_id"))
 		{
 			$this->load->model("avatar_model");
+			$this->load->model("location_model");
+
 			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
@@ -17,7 +19,7 @@ class Location extends CI_Controller {
 				
 				$data['consumptions'] = $this->consumptions_model->getAllConsumptions();
 				
-				$this->load->view("location_bar",$data);
+				$this->load->view("map",$data);
 			}
 			else
 			{
@@ -30,6 +32,15 @@ class Location extends CI_Controller {
 			// Ververs de pagina om het inlogscherm te tonen
 			redirect("/","refresh");
 		}
+	}
+	
+	public function bar()
+	{
+		
+	
+		$this->load->view("bar");
+		
+
 	}
 	
 	public function consume($consumption_id)

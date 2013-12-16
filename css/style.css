@@ -493,10 +493,15 @@ ul#header_stats li span {
 	background: red;
 	float: right;
 	margin: 120px 100px 0px 0px;
-	padding: 20px;
+	padding: 20px;	
 	border-radius: 4px;
 	font-size: 14px;
 	max-width: 300px;
 	font-weight: bold;
 	color: #fff;
+}
+
+#barBackground{
+background-image: url('../img/bar.png');
+height:100%;	
 }
