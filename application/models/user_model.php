@@ -44,7 +44,7 @@ class User_model extends CI_Model
 		$sql = "SELECT email FROM user WHERE email = ?";
 		$result = $this->db->query($sql, $email);
 		
-		if($result->num_rows() = 0)
+		if($result->num_rows() == 0)
 		{
 			$sql = "INSERT users SET `email` = ? , `password` = ?, `birthdate` = ?, `register_date` = ?";
 		
