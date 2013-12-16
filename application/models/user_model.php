@@ -46,7 +46,6 @@ class User_model extends CI_Model
 		if($result->num_rows() == 0)
 		{
 			$sql = "INSERT INTO users (`email`,`password`, `birthdate`, `register_date`) VALUES (?,?,?,?)";
-			/*$sql = "INSERT INTO users VALUES `email` = ?, `password` = ?, `birthdate` = ?, `register_date` = ?";*/
 		
 			$query_values = array($email, $hashedpassword, $birthdate, time());
 		

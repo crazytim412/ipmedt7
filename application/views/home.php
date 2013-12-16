@@ -21,7 +21,7 @@
             </table>
         </form>
         <div class="link1">
-            <a href="/register">Nog geen account?</a>
+            <a href="index.php/register">Nog geen account?</a>
         </div>
     </div>
     <div id="welcomeMsg">

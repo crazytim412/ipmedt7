@@ -14,14 +14,23 @@ class Register extends CI_Controller {
 			$year = $this->input->post("year");
 			
 			$password = $this->input->post("password");
+			$passwordrepeat = $this->input->post("passwordrepeat");
 			
-			$birthdate = $year."-".$month."-".$day;
+			$data=array();
 			
-			$hashedpassword = sha1("konscio".md5($password)."game");
-			
-			$this->user_model->setUserDetails($this->input->post("email"), $hashedpassword, $birthdate);
-			
-			$this->load->view("register");
+			if($password == $passwordrepeat)
+			{
+				$birthdate = $year."-".$month."-".$day;
+				
+				$hashedpassword = sha1("konscio".md5($password)."game");
+							
+				$this->user_model->setUserDetails($this->input->post("email"), $hashedpassword, $birthdate);
+			}
+			else
+			{
+				$data["error"]="Fout, je wachtwoord komt niet overeen.";
+			}
+			$this->load->view("register", $data);
 		}
 		else
 		{

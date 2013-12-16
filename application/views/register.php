@@ -9,10 +9,10 @@
                     <td><input name="email" value="" type="text" placeholder="E-mailadres" /></td>
                 </tr>
                 <tr>
-                    <td><input name="passwordnormaal" value="" type="password" placeholder="Wachtwoord" /></td>
+                    <td><input name="password" value="" type="password" placeholder="Wachtwoord" /></td>
                 </tr>
                 <tr>
-                    <td><input name="passwordherhaal" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
+                    <td><input name="passwordrepeat" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
                 </tr>
 				<tr>
                     <td><input name="day" value="" type="number" min="1" max="31" placeholder="Geboorte Dag" /></td>
@@ -29,7 +29,7 @@
             </table>
         </form>
         <div class="link1">
-            <a href="index.php/login">Ik heb al een account.</a>
+            <a href="/">Ik heb al een account.</a>
         </div>
     </div>
 </div>
