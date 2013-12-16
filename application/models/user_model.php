@@ -50,12 +50,10 @@ class User_model extends CI_Model
 			$query_values = array($email, $hashedpassword, $birthdate, time());
 		
 			return $this->db->query($sql, $query_values);
-			
-			echo($birthdate);
 		}
 		else
 		{
-			return 0;
+			return 1;
 		}
 	}
 }
