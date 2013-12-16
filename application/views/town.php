@@ -1,5 +1,7 @@
 <?php $this->load->view("common/header_game"); ?>
 		<script type="text/javascript">
+			var energy = 50;
+			
 			var flashvars = {};
 			var params = {
 				"quality": "high",
@@ -40,9 +42,19 @@
 				</ul>
 
 				<div id="optionsBut"></div>
+				<div id="optionsButMenu">
+					<ul class="dropdown-menu">
+						<li><a href="/settings/">Instellingen</a></li>
+						<li><a href="/index.php/logout/">Uitloggen</a></li>
+					</ul>
+				</div>
 				<div class="clear"></div>
-				<canvas id="energymeter"></canvas>
-				<!--<div id="energymeter"></div>-->
+				<!--<canvas id="energymeter"></canvas>-->
+				<div id="energymeter">
+					<div class="bar"></div>
+					<span class="amount">100%</span>
+					<span class="label">Energie</span>
+				</div>
 			</div>
 			<div id="map">
 				<ul id="labels">

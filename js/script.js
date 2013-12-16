@@ -1,13 +1,33 @@
 $(document).ready(function(){
-	var canvas = document.getElementById('energymeter');
-	var context = canvas.getContext('2d');
+
 	
-	context.beginPath();
-	context.arc(288, 75, 70, 0, Math.PI, false);
-	context.closePath();
-	context.lineWidth = 5;
-	context.fillStyle = 'red';
-	context.fill();
-	context.strokeStyle = '#550000';
-	context.stroke();	
+	$("#optionsBut").click(function(){
+		if($("#optionsButMenu").css("display") == "block")
+		{
+			// Menu Sluiten
+			$("#optionsButMenu").css("display", "none");
+		}
+		else
+		{
+			// Menu Openen
+			$("#optionsButMenu").css("display", "block");
+		}
+	});
+	
+	$(document).click( function(event) {
+		// If somewhere outside of the multiselect was clicked then hide the multiselect
+
+		if(!($(event.target).parents().andSelf().is('#optionsBut')) && !($(event.target).parents().andSelf().is('#optionsBut'))){
+			$("#optionsButMenu").css('display','none');
+		}
+	});
+});
+
+$(window).load(function(){
+	if($("#energymeter").length != 0)
+	{
+		$("#energymeter .amount").text(energy+"%");
+		$("#energymeter .bar").animate({ height: energy*1.4+"px"},1000)
+		console.log(energy);
+	}
 });
