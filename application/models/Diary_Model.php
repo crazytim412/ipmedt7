@@ -52,7 +52,27 @@ class Diary_Model extends CI_Model
 	
 	function getTotalMoodAffection($user_id, $day)
 	{
+		$sql = "SELECT SUM(c.mood_affection)
+				FROM diary d 
+				JOIN consumptions c ON d.consumption_id = c.id
+					WHERE d.user_id = ? and d.day = ?";
+		
+		$result = $this->db->query($sql, array($user_id, $day));
+	}
+	
+	function getTotalHealthAffection($user_id, $day)
+	{
 		$sql = "SELECT SUM(c.health_affection)
+				FROM diary d 
+				JOIN consumptions c ON d.consumption_id = c.id
+					WHERE d.user_id = ? and d.day = ?";
+		
+		$result = $this->db->query($sql, array($user_id, $day));
+	}
+	
+	function getTotalConsumptionWeight($user_id, $day)
+	{
+		$sql = "SELECT SUM(c.consumption_weight)
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
 					WHERE d.user_id = ? and d.day = ?";

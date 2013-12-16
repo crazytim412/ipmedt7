@@ -28,17 +28,34 @@ class Bedroom extends CI_Controller {
 			
 			$this->load->model("Diary_Model");
 			$this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
-			
-			$day = $this->diary_model->getDay($data['avatar_details']['user_id']);
-			
-			$newDay = $day++;
-			
-			$this->diary_model->setDay($newDay);
-			
-			$this->load->view("town",$data);
 		}
+	}
+	
+	public function day()
+	{
+		$this->load->model("Diary_Model");
+	
+		$day = $this->diary_model->getDay($data['avatar_details']['user_id']);
+			
+		$newDay = $day++;
+		
+		$this->diary_model->setDay($newDay);
+		
+		$this->load->view("town",$data);
+	}
+	
+	public function report()
+	{
+		$data[] = array();
+		
+		$this->load->model("Diary_Model");
+		$mood = $this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$health = $this->diary_model->getTotalHealthAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$consumption = $this->diary_model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		
+		$this->load->view("town",$data);		
 	}
 }
 
-/* End of file home.php */
-/* Location: ./application/controllers/home.php */
+/* End of file bedroom.php */
+/* Location: ./application/controllers/bedroom.php */
