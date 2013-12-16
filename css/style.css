@@ -1,8 +1,168 @@
-body{
+html, body{
+	width: 100%;
+	height: 100%;
+	
 	padding: 0px;
 	margin: 0px;
 	font-family: arial;
 	background: #eaeaea;
+}
+
+#map-container {
+	width: 100%;
+	height: 100%;
+	
+	min-width: 960px;
+	
+	display: inline-block;
+	
+	overflow: hidden;
+}
+
+#map-container #header {
+	width: 100%;
+	height: 100px;
+	
+	min-width: 960px;
+	
+	position: absolute;
+	top: 0px;
+	
+	z-index: 300;
+	
+	background: #000;
+}
+
+ul#header_stats {
+	float: left;
+	list-style: none;
+	margin: 0 0 0 15px;
+}
+
+ul#header_stats li {
+	float: left;
+	color: #ff8500;
+	margin-right: 15px;
+	display: table;
+	
+	height: 100px;
+}
+
+ul#header_stats li label {
+	font-weight: bold;
+	font-size: 15px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+ul#header_stats li span {
+	font-size: 35px; 
+	color: #ff8500;
+	padding: 0 0 0 10px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#map-container #header .logo {
+	margin: 15px 0 0 20px;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+#map-container #map {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*background: url(/img/map.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;*/
+}
+#map-container #background {
+	z-index: 0;
+	position: absolute;
+}
+
+#map-container #map #labels {
+	min-width: 1200px;
+	display: table;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+#map-container #map #labels li {
+	/*background: rgba(255,255,255,0.3);*/
+	display: table;
+	position: absolute;
+	
+	cursor: pointer;
+	
+	text-align: center;
+	vertical-align: middle;
+	
+}
+
+#map-container #map #labels li p {
+	margin: 0;
+	padding: 0;
+	
+	color: #FFF;
+	font-size: 20px;
+	
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	
+	line-height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#map-container #map #labels .festival {
+	left: 6%;
+	top: 25%;
+	
+	width: 25%;
+	height: 20%;
+}
+
+#map-container #map #labels .disco {
+	left: 32%;
+	top: 38%;
+	
+	width: 23%;
+	height: 20%;
+}
+
+#map-container #map #labels .bar {
+	left: 57%;
+	top: 62%;
+	
+	width: 10%;
+	height: 12%;
+}
+
+#map-container #map #labels .friends {
+	left: 70%;
+	top: 54%;
+	
+	width: 14%;
+	height: 12%;
+}
+
+#map-container #map #labels .home {
+	left: 36%;
+	top: 66%;
+	
+	width: 10%;
+	height: 10%;
+}
+
+#map-container #footer {
+	height: 100px;
+	width: 100%;
+	
+	background: #3A69C1;
 }
 
 #frame{
@@ -124,13 +284,8 @@ body{
 }
 
 #energymeter{
-	width: 175px; height: 350px;
 	float: right;
-	overflow: hidden;
-	background: url('../img/meter.png') center;
-	background-repeat:no-repeat ;
-
-
+	margin-left: -100px;
 }
 
 #vierkant { width: 1024px; height: 280px; background: #3A111C; 
