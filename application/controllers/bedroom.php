@@ -44,16 +44,38 @@ class Bedroom extends CI_Controller {
 		$this->load->view("town",$data);
 	}
 	
-	public function report()
+	public function nieuw($user_id)
 	{
-		$data[] = array();
+		$data = array();
 		
 		$this->load->model("Diary_Model");
+		
+		$newMood = $this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$newHealth = $this->diary_model->getTotalHealthAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$newScore = $this->diary_model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		
+		$oldScore = $this->diary_model->getOldScore($user_id);
+		$oldHealth = $this->diary_model->getOldHealth($user_id);
+		$oldMood = $this->diary_model->getOldHealth($user_id);
+		
+		$currentMood = $oldMood - $newMood;
+		$currentScore = $oldScore - $newScore;
+		$currentHealth = $oldHealth - $oldHealth;
+		
+		$data = $data[$currentMood][$currentScore][$currentHealth];
+		
+		$this->diary_model->setNewData($data);
+	}
+	
+	public function report()
+	{
+		$this->load->model("Diary_Model");
+		
 		$mood = $this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
 		$health = $this->diary_model->getTotalHealthAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
 		$consumption = $this->diary_model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
 		
-		$this->load->view("town",$data);		
+		$this->load->view("town",$mood, $health, $consumption);		
 	}
 }
 

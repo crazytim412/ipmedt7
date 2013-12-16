@@ -79,5 +79,28 @@ class Diary_Model extends CI_Model
 		
 		$result = $this->db->query($sql, array($user_id, $day));
 	}
+	
+	function getOldScore($user_id)
+	{
+		$sql = "SELECT score FROM avatar WHERE user_id = ?";
+		
+		$result = $this->db->query($sql, $user_id);
+	}
+	
+	function getOldMood($user_id)
+	{
+		$sql = "SELECT mood FROM avatar WHERE user_id = ?";
+		
+		$result = $this->db->query($sql, $user_id);
+	}
+	
+	function setNewData($user_id, $data)
+	{
+		$sql = "UPDATE avatar SET `mood` = ?, `score` = ? WHERE `id` = ? ";
+		
+		$query_values = array($details['mood'], $details['score'], $user_id);
+		
+		return $this->db->query($sql, $query_values);
+	}
 }
 ?>
