@@ -585,6 +585,29 @@ height:100%;
 	margin: 35px 100px 0px 0px;
 }
 
+#gameOverbackground{
+	background: #000000;		
+}
+
+#gameOverbackground h1{
+	font-size: 26px;
+	color: #FFFFFF;
+}
+
+#gameOverbackground h2{
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+#gameOverbackground p{
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.opaque1 {	// for all other browsers
+	opacity: .5;
+}
+
 #head{
 	height: 120px;
 	position: absolute;
