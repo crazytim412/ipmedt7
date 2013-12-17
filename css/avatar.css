@@ -1,0 +1,50 @@
+#avaFemale{
+	width: 165px;
+	margin: 50px;
+	position: absolute;
+}
+
+#avaHair{
+	width: 150px;
+	height: 120px;
+	background: url('../img/characters/vrouw/kapsels/kapsel3.png') center no-repeat;
+	position: absolute;
+	margin: 0px 0px 0px 5px;
+}
+
+#avaNeck{
+	width: 32px;
+	height: 15px;
+	background: #e29857;
+	margin: 0px 0px 0px 60px;
+}
+
+#avaFace{
+	width: 80px;
+	height: 82px;
+	border-radius: 3px;
+	background: ;
+	margin: 20px 0px 0px 38px;
+}
+
+#avaHead{
+	width: 150px;
+	height: 120px;
+	position: absolute;
+	margin: 0px 0px 0px 4px;
+}
+
+#avaBody{
+	margin: 114px 0px 0px 0px;
+	width: 165px;
+	height: 172px;
+	position: absolute;
+}
+
+#avaLegs{
+	margin: 267px 0px 0px 0px;
+	background: url('../img/characters/vrouw/broek/bruin.png') center no-repeat;
+	width: 165px;
+	height: 202px;
+	position: absolute;
+}
