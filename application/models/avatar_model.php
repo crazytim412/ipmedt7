@@ -12,11 +12,19 @@ class Avatar_model extends CI_Model
 	function getAvatarDetails($user_id)
 	{
 		$sql = "SELECT * FROM avatar WHERE user_id = ? LIMIT 1";
-		
+  
 		$result = $this->db->query($sql, $user_id);
-		$row = $result->row_array(); 
-		
-		return $row;
+  
+		if($result->num_rows() > 0
+		{
+			$row = $result->row_array(); 
+  
+			return $row;
+		}
+		else
+		{
+			return 0;
+		} 
 	}
 	
 	function setAvatarDetails($details)
@@ -27,6 +35,16 @@ class Avatar_model extends CI_Model
 		
 		return $this->db->query($sql, $query_values);
 		
+	}
+	
+	function getGameOverScore($user_id)
+	{
+		$sql = "SELECT score FROM avatar WHERE user_id = ? LIMIT 1";
+		
+		$result = $this->db->query($sql, $user_id);
+		$row = $result->row_array(); 
+		
+		return $row;
 	}
 }
 ?>
