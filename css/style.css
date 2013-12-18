@@ -447,13 +447,8 @@ ul#header_stats li span {
 	cursor: poiner;
 	border:none;
 	margin: 50px 200px 0 500px;
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 }
 
-<<<<<<< Updated upstream
 /*AVATAR creation*/
 #creationFrame{
 	width: 996px;
@@ -599,6 +594,62 @@ ul#header_stats li span {
 }
 
 >>>>>>> Stashed changes
+=======
+}
+
+
+#optie1{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
+}
+
+#optie1:hover{
+	border: none;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
+}
+
+#optie2{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
+}
+
+#optie2:hover{
+	border: none;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
+}
+
+#optie3{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
+}
+
+>>>>>>> Stashed changes
 #optie3:hover{
 	border: none;
 	background: red;
@@ -606,6 +657,9 @@ ul#header_stats li span {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
