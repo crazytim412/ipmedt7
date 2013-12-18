@@ -131,7 +131,7 @@ $(function () { //document ready
 					<div id="cF1">
 						<div id="avatarFields">
 							<div id="radio">
-								<form action="/index.php/" method="POST">
+								<form action="" method="POST">
 									<input type="radio" name="group1" value="man"> man
 									<input type="radio" name="group1" value="vrouw"> vrouw
 							</div>
