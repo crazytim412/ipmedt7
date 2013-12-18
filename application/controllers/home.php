@@ -25,8 +25,15 @@ class Home extends CI_Controller {
 			$this->load->model("avatar_model");
 			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
-						
-			$this->load->view("town",$data);
+			
+			//heeft de user al een avatar aangemaakt?
+			if($this->avatar_model->getAvatarDetails($this->session->userdata('user_id')))
+			{
+				$this->load->view("town",$data);
+			}
+			else{
+				redirect("avatar","refresh");
+			}
 		}
 		// De user is nog niet ingelogd, toon het inlogscherm
 		else

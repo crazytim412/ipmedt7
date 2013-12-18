@@ -27,6 +27,17 @@ class Avatar_model extends CI_Model
 		} 
 	}
 	
+	function setAvatarCreate($nickname)
+	{
+		//$sql = "INSERT INTO avatar (`user_id`, `name`, `gender`, `energy`, `day`, `mood`, `score`, `day`, `head_id`, `shirt_id`, `pants_id`, `shoes_id`) VALUES (?,?,?,?,?,?) WHERE user_id = ?";
+		$sql = "INSERT INTO avatar (`user_id`, `name`) VALUES (?,?)";
+		
+		$query_values = array($this->session->userdata('user_id'), $nickname);
+		
+		return $this->db->query($sql, $query_values);
+		
+	}
+	
 	function setAvatarDetails($details)
 	{
 		$sql = "UPDATE avatar SET `energy` = ?, `mood` = ?, `score` = ?, `day` = ? WHERE user_id = ?";
@@ -46,5 +57,6 @@ class Avatar_model extends CI_Model
 		
 		return $row;
 	}
+	
 }
 ?>
