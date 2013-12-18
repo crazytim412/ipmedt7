@@ -13,6 +13,7 @@ class Avatar extends CI_Controller {
 			if($this->input->post("nickname"))
 			{
 				$this->load->view("avatar_create");
+				
 			}
 			else
 			{
