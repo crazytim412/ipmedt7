@@ -4,13 +4,14 @@
 $(function () { //document ready
 
 	//array aanmaken met kapsel keuze
-	var kapsel = ['kapsel1', 'kapsel2', 'kapsel3', 'kapsel4'],
+	var kapsel = ['1', '2', '3', '4'],
 		counter1 = 0;
 	// the next line, of course, assumes you have an element with id="next"
 	$('#nextHead').click(function () {
 		counter1 = (counter1 + 1) % kapsel.length; // counter optellen
 		//html veranderen
 		$( '#avaHair' ).css( "background", "url(/img/characters/vrouw/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
+		$('input[type=text]#headId').val(lichaam[counter1]);
 	});
 
 	$('#prevHead').click(function () {
@@ -21,15 +22,17 @@ $(function () { //document ready
 		}
 		//html veranderen
 		$( '#avaHair' ).css( "background", "url(/img/characters/vrouw/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
+		$('input[type=text]#headId').val(lichaam[counter1]);
 	});
 
 	//array aanmaken met lichaams keuze
-	var lichaam = ['cyan', 'paars', 'rood', 'roze'],
+	var lichaam = ['1', '2', '3', '4'],
 		counter2 = 0;
 	$('#nextBody').click(function () {
 		counter2 = (counter2 + 1) % lichaam.length; // counter optellen
 		//html veranderen
 		$( '#avaBody' ).css( "background", "url(/img/characters/vrouw/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
+		$('input[type=text]#bodyId').val(lichaam[counter2]);
 		console.log(lichaam[counter2]); // counter optellen
 	});
 
@@ -41,15 +44,17 @@ $(function () { //document ready
 		}
 		//html veranderen
 		$( '#avaBody' ).css( "background", "url(/img/characters/vrouw/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
+		$('input[type=text]#bodyId').val(lichaam[counter2]);
 	});
 
 	//array aanmaken met broek keuze
-	var broek = ['bruin', 'cyan', 'rood', 'roze'],
+	var broek = ['1', '2', '3', '4'],
 		counter3 = 0;
 	$('#nextLegs').click(function () {
 		counter3 = (counter3 + 1) % broek.length; // increment your counter
 		//html veranderen
 		$( '#avaLegs' ).css( "background", "url(/img/characters/vrouw/broek/"+broek[counter3]+".png) center no-repeat" );
+		$('input[type=text]#legsId').val(lichaam[counter3]);
 	});
 
 	$('#prevLegs').click(function () {
@@ -60,6 +65,7 @@ $(function () { //document ready
 		}
 		//html veranderen
 		$( '#avaLegs' ).css( "background", "url(/img/characters/vrouw/broek/"+broek[counter3]+".png) center no-repeat" );
+		$('input[type=text]#legsId').val(lichaam[counter3]);
 	});
 });
 </script>
@@ -70,9 +76,9 @@ $(function () { //document ready
 	<div id="avaFace" style="background: #e29857 url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
 	<div id="avaNeck"></div>
 </div>
-<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/kapsel4.png) center no-repeat;"></div>
-<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/cyan.png) center no-repeat;"></div>
-<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/bruin.png) center no-repeat;"></div>
+<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/1.png) center no-repeat;"></div>
+<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/2.png) center no-repeat;"></div>
+<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/3.png) center no-repeat;"></div>
 </div>-->
 
 
@@ -133,9 +139,12 @@ $(function () { //document ready
 							<div id="radio">
 								<form action="" method="POST">
 									<input type="radio" name="group1" value="man"> man
-									<input type="radio" name="group1" value="vrouw"> vrouw
+									<input type="radio" name="group1" value="vrouw" checked > vrouw
 							</div>
 							<input id="nickField" type="text" placeholder="Nickname.."  name="nickname" />
+							<input id="headId" type="text" name="headId" value="1" hidden />
+							<input id="bodyId" type="text" name="bodyId" value="2" hidden />
+							<input id="legsId" type="text" name="legsId" value="3" hidden />
 						</div>
 						<div id="headBlock" class="block">
 							<div class="leftArrow" id="prevHead"></div>
@@ -144,21 +153,21 @@ $(function () { //document ready
 									<div id="avaFace" style="background: #e29857 url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
 									<div id="avaNeck"></div>
 								</div>
-								<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/kapsel4.png) center no-repeat;"></div>
+								<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/1.png) center no-repeat;"></div>
 							</div>
 							<div class="rightArrow" id="nextHead"></div>
 						</div>
 						<div id="bodyBlock" class="block">
 							<div class="leftArrow" id="prevBody"></div>
 							<div id="body">
-								<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/cyan.png) center no-repeat; margin: 0px;"></div>
+								<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/2.png) center no-repeat; margin: 0px;"></div>
 							</div>
 							<div class="rightArrow" id="nextBody"></div>
 						</div>
 						<div id="legBlock" class="block">
 							<div class="leftArrow" id="prevLegs"></div>
 							<div id="legs">
-								<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/bruin.png) center no-repeat; margin: 0px;"></div>
+								<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/3.png) center no-repeat; margin: 0px;"></div>
 							</div>
 							<div class="rightArrow" id="nextLegs"></div>
 						</div>
