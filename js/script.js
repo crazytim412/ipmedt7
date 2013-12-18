@@ -27,7 +27,7 @@ $(window).load(function(){
 	if($("#energymeter").length != 0)
 	{
 		$("#energymeter .amount").text(energy+"%");
-		$("#energymeter .bar").animate({ height: energy*1.4+"px"},1000)
+		$("#energymeter .bar").animate({ height: energy*0.8+"px"},1000)
 		console.log(energy);
 	}
 });

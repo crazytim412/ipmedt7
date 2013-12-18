@@ -37,7 +37,7 @@
 					</li>
 					<li>
 						<label>Totaal score</label>
-						<span>192</span>
+						<span><?php echo $avatar_details['score'];?></span>
 					</li>
 				</ul>
 

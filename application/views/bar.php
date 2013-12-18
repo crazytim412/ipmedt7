@@ -1,6 +1,6 @@
 <?php $this->load->view("common/header_game"); ?>
 		<script type="text/javascript">
-			var energy = 50;
+			var energy = 1;
 			
 			var flashvars = {};
 			var params = {
@@ -13,7 +13,7 @@
 				"doExpressInstall" : false
 			};
 			
-			swfobject.embedSWF("/swf/bar_v1.swf", "background", "100%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
+			swfobject.embedSWF("/swf/bar_v1.swf", "background", "50%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
 		<div id="map-container">
@@ -37,7 +37,7 @@
 					</li>
 					<li>
 						<label>Totaal score</label>
-						<span>192</span>
+						<span><?php echo $avatar_details['score'];?></span>
 					</li>
 				</ul>
 
