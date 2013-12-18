@@ -467,24 +467,28 @@ ul#header_stats li span {
 
 >>>>>>> feature/bar_v2
 
-#optie1{
-	background-color: black;
+.optie1{
+	color: green;
 	-moz-border-radius: 5px;
 	border-radius: 6px;
 	color: #fff;
+	height: 100px;
+     width: 400px;
 	font-size: 20px
 	text-decoration:none;
-	cursor: poiner;
+	position:absolute;
 	border:none;
-	margin: 50px 200px 0 500px;
+	margin: 50px 100px 0 500px;
+
 
 }
 
-#optie1:hover{
+.optie1:hover{
 	border: none;
 	background: red;
 	box-shadow: 0px 0px 1px #777;
 }
+/*
 
 #optie2{
 	background-color: black;
@@ -517,6 +521,7 @@ ul#header_stats li span {
 	margin: 50px 200px 0 500px;
 
 }
+*/
 
 <<<<<<< HEAD
 #legBlock{

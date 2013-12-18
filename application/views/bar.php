@@ -54,5 +54,17 @@
 					<div class="bar"></div>
 					<span class="amount">100%</span>
 					<span class="label">Energie</span>
+				
+
 				</div>
+				
+				<input type="submit" name="option1" value="Optie 1" id="optie1" />
+
+
+				
+				
+
+				</div>
+
+	
 			</div>
