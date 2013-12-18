@@ -8,28 +8,15 @@ class Avatar extends CI_Controller {
 		if($this->session->userdata("user_id"))
 		{
 			$this->load->model("avatar_model");
-			$this->load->model("location_model");
-
-			//heeft de user al een avatar aangemaakt?
-			if($data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id')))
+			
+			//user moet eerst avatar aanmaken
+			if($this->input->post("nickname"))
 			{
-				//user heeft een avatar
-				if($this->session->userdata("inside_location") == true)
-				{
-					$this->load->model("consumptions_model");
-					
-					$data['consumptions'] = $this->consumptions_model->getAllConsumptions();
-					
-					$this->load->view("map",$data);
-				}
-				else
-				{
-					$this->load->view("location_entrance",$data);
-				}
+				$this->load->view("avatar_create");
 			}
-			else{
-				//user moet eerst avatar aanmaken
-				$this->load->view("create_avatar",$data);
+			else
+			{
+				$this->load->view("avatar_create");
 			}
 		}
 		// De user is nog niet ingelogd, toon het inlogscherm
@@ -39,8 +26,6 @@ class Avatar extends CI_Controller {
 			redirect("/","refresh");
 		}
 	}
-	
-	
 
 	
 	public function exitlocation()
@@ -52,5 +37,5 @@ class Avatar extends CI_Controller {
 	}
 }
 
-/* End of file Location.php */
-/* Location: ./application/controllers/Location.php */
+/* End of file Avatar.php */
+/* Location: ./application/controllers/Avatar.php */

@@ -15,7 +15,7 @@ class Avatar_model extends CI_Model
   
 		$result = $this->db->query($sql, $user_id);
   
-		if($result->num_rows() > 0
+		if($result->num_rows() > 0)
 		{
 			$row = $result->row_array(); 
   
@@ -46,5 +46,6 @@ class Avatar_model extends CI_Model
 		
 		return $row;
 	}
+	
 }
 ?>

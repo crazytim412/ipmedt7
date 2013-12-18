@@ -475,7 +475,7 @@ ul#header_stats li span {
 	text-decoration: underline;
 }
 
-#orangeBox .but1{
+.but1{
 	border: none;
 	float: right;
 	color: #fff;
@@ -485,7 +485,7 @@ ul#header_stats li span {
 	background: url('../img/but1.jpg');
 }
 
-#orangeBox .but1:hover{
+.but1:hover{
 	background: url('../img/but1_hov.jpg');
 }
 
