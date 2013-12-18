@@ -9,15 +9,26 @@ class Avatar extends CI_Controller {
 		{
 			$this->load->model("avatar_model");
 			
-			//user moet eerst avatar aanmaken
-			if($this->input->post("nickname"))
+			//heeft de user een avatarrrrrrrrr?
+			if(!$this->avatar_model->getAvatarDetails($this->session->userdata('user_id')))
 			{
-				$this->load->view("avatar_create");
-				
-			}
-			else
-			{
-				$this->load->view("avatar_create");
+				//user moet eerst avatar aanmaken
+				if($this->input->post())
+				{
+			
+					$nickname = $this->input->post("nickname");
+					
+					$this->avatar_model->setAvatarCreate($nickname);
+					
+					redirect("/","refresh");
+					
+				}
+				else
+				{
+					
+					$this->load->view("avatar_create");
+					
+				}
 			}
 		}
 		// De user is nog niet ingelogd, toon het inlogscherm
