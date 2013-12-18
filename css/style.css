@@ -53,8 +53,6 @@ ul#header_stats li label {
 	font-size: 15px;
 	display: table-cell;
 	vertical-align: middle;
-	
-	background-color: rgba(0,0,0,0.3);
 }
 
 ul#header_stats li span {
@@ -85,11 +83,6 @@ ul#header_stats li span {
 #map-container #background {
 	z-index: 0;
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: url(/img/map.jpg);
-	background-size: cover;
-	background-position: center center;
 }
 
 #map-container #map #labels {
@@ -119,10 +112,6 @@ ul#header_stats li span {
 	font-size: 20px;
 	
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-	
-	background-color: rgba(0,0,0,0.1);
-	
-	border-radius: 6px;
 	
 	line-height: 100%;
 	display: table-cell;
@@ -275,67 +264,8 @@ ul#header_stats li span {
 	float: right;
 	background: url('../img/menu.png') center left;
 	background-repeat:no-repeat ;
-	cursor: pointer;
 	
 }
-
-.dropdown-menu {
-	font-size: 14px;
-	list-style: none;
-}
-
-#optionsButMenu {
-	width: 150px;
-	position: absolute;
-	right: 20px;
-	top: 100px;
-	display: none;
-	background: #ccc;
-	
-}
-
-#optionsButMenu ul {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 1000;
-	float: left;
-	min-width: 160px;
-	padding: 5px 0;
-	margin: 2px 0 0;
-	font-size: 14px;
-	list-style: none;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	border: 1px solid rgba(0,0,0,0.15);
-	border-radius: 4px;
-	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
-	box-shadow: 0 6px 12px rgba(0,0,0,0.175);
-	background-clip: padding-box;
-}
-
-#optionsButMenu ul li {
-	display: list-item;
-	text-align: -webkit-match-parent;
-}
-
-#optionsButMenu ul li a{
-	display: block;
-	padding: 3px 20px;
-	clear: both;
-	font-weight: normal;
-	line-height: 1.428571429;
-	text-decoration: none;
-	color: #333;
-	white-space: nowrap;
-}
-#optionsButMenu ul li a:hover,
-#optionsButMenu ul li a:focus {
-	color: #262626;
-	text-decoration: none;
-	background-color: #f5f5f5;
-}
-
 
 #stats ul{
 	font-family: calibri; font-size: 16px;
@@ -354,46 +284,8 @@ ul#header_stats li span {
 }
 
 #energymeter{
-	width: 134px;
-	height: 281px;
-	position: absolute;
-	background: url(/img/energy-meter.png) no-repeat;
 	float: right;
-	top: 120px;
-	right: 20px;
-	z-index: 999;
-}
-
-#energymeter .amount {
-	width: 100%;
-	position: absolute;
-	bottom: 65px;
-	text-align: center;
-}
-
-#energymeter .bar {
-	position: absolute;
-	
-	left: 42px;
-	bottom: 139px;
-	
-	width: 40px;
-	
-	background: #ff8f00;
-	
-	border-radius: 4px 4px 0 0;
-}
-
-#energymeter .label {
-	width: 94%;
-	position: absolute;
-	text-align: center;
-	bottom: 95px;
-	margin-right: 10px;
-	
-	font-size: 20px;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-	color: #FFF;
+	margin-left: -100px;
 }
 
 #vierkant { width: 1024px; height: 280px; background: #3A111C; 
@@ -502,10 +394,66 @@ ul#header_stats li span {
 }
 
 #barBackground{
-background-image: url('../img/bar.png');
-height:100%;	
+	background-image: url('../img/bar.png');
+	height:100%;	
 }
 
+
+#optie1{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
+}
+
+#optie1:hover{
+	border: none;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
+}
+
+#optie2{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
+}
+
+#optie2:hover{
+	border: none;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
+}
+
+#optie3{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+}
+
+<<<<<<< Updated upstream
 /*AVATAR creation*/
 #creationFrame{
 	width: 996px;
@@ -638,4 +586,31 @@ height:100%;
 #legBlock{
 	height: 187px;
 	background: #ff8f00;
+=======
+=======
+}
+
+>>>>>>> Stashed changes
+=======
+}
+
+>>>>>>> Stashed changes
+=======
+}
+
+>>>>>>> Stashed changes
+#optie3:hover{
+	border: none;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 }
