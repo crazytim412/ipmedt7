@@ -36,10 +36,14 @@ class Location extends CI_Controller {
 	
 	public function bar()
 	{
+		if($this->session->userdata("user_id"))
+		{
+			$this->load->model("avatar_model");
 		
-	
-		$this->load->view("bar");
+			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 		
+			$this->load->view("bar", $data);
+		}
 
 	}
 	

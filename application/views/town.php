@@ -69,3 +69,5 @@
 		<!--<div class="content">
 			<a href="/index.php/location">Ga naar de kroeg</a>
 		</div>-->
+		
+		<?php $this->load->view("common/footer");?>

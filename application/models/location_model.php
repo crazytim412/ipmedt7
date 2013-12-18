@@ -28,5 +28,30 @@ class location_model extends CI_Model
 		return $this->db->query($sql, $query_values);
 		
 	}
+	
+	function getConsumptionDetails($consumption_id)
+	{
+		$sql = "SELECT * FROM location WHERE id = ? LIMIT 1";
+		
+		$result = $this->db->query($sql, $id);
+		$row = $result->row_array(); 
+		
+		return $row;
+	}
+	
+	function setLocationDetails($consumption_details)
+	{
+		$sql = "UPDATE avatar SET `name` = ?, `consumption_weight` = ?, `health_affection` = ?, `mood_affection` = ? WHERE consumption_id = ?";
+		
+		$query_values = array($consumption_details['name'], $consumption_details['consumption_weight'], $consumption_details['health_affection'], $consumption_details['mood_affection'], $consumption_details['user_id']);
+		
+		return $this->db->query($sql, $query_values);
+		
+	}
+
+	
 }
+	
+	
+	
 ?>
