@@ -396,6 +396,7 @@ ul#header_stats li span {
 #barBackground{
 	background-image: url('../img/bar.png');
 	height:100%;	
+<<<<<<< HEAD
 }
 
 
@@ -461,132 +462,75 @@ ul#header_stats li span {
 	font-family: arial;
 	font-size: 12px;
 }
-
-#creationFrame h2{
-	font-size: 24px;
-	font-weight: 300;
+=======
 }
 
-#cF1{
-	width: 585px;
-	height: 569px;
-	float: left;
+>>>>>>> feature/bar_v2
+
+#optie1{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
 }
 
-#cF2{
-	padding: 22px 25px 22px 20px;
-	margin-left: 10px;
-	width: 354px;
-	height: 569px;
-	float: left;
-}
-
-#avatarFields{
-	height: 54px;
-	background: #f03c02;
-	font-size: 20px;
-	padding: 5px;
-}
-
-#radio{
-	float: left;
-	margin: 15px 0px 0px 30px;
-}
-
-#radio input{
-	margin: 0px 10px 0px 10px;
-}
-
-#nickField{
-	width: 200px;
-	padding: 5px 10px;
-	margin: 5px 3px 0px 0px;
-	font-size: 20px;
+#optie1:hover{
 	border: none;
-	height: 35px;
-	float: right;
-	border-radius: 2px;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
 }
 
-.block{
-	margin-bottom: 5px;
+#optie2{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
 }
 
-.leftArrow{
-	background: url('/img/arrowleft.jpg');
-	width: 67px;
-	height: 68px;
-	float: left;
-	cursor: pointer;
-	margin: 35px 0px 0px 100px;
+#optie2:hover{
+	border: none;
+	background: red;
+	box-shadow: 0px 0px 1px #777;
 }
 
-.rightArrow{
-	background: url('/img/arrowright.jpg');
-	width: 67px;
-	height: 68px;
-	float: right;
-	cursor: pointer;
-	margin: 35px 100px 0px 0px;
+#optie3{
+	background-color: black;
+	-moz-border-radius: 5px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 20px
+	text-decoration:none;
+	cursor: poiner;
+	border:none;
+	margin: 50px 200px 0 500px;
+
 }
 
-#gameOverbackground{
-	background: #000000;		
-}
-
-#gameOverbackground h1{
-	font-size: 26px;
-	color: #FFFFFF;
-}
-
-#gameOverbackground h2{
-	font-size: 20px;
-	color: #FFFFFF;
-}
-
-#gameOverbackground p{
-	font-size: 14px;
-	color: #FFFFFF;
-}
-
-.opaque1 {	// for all other browsers
-	opacity: .5;
-}
-
-#head{
-	height: 120px;
-	position: absolute;
-	margin: 18px 0px 0px 210px;
-}
-
-#body{
-
-	position: absolute;
-	margin: -1px 0px 0px 210px;
-}
-
-#legs{
-	position: absolute;
-	margin: -17px 0px 0px 210px;
-}
-
-#headBlock{
-	height: 135px;
-	background: #ff8f00;
-}
-
-#bodyBlock{
-	height: 171px;
-	background: #ff8f00;
-}
-
+<<<<<<< HEAD
 #legBlock{
 	height: 187px;
 	background: #ff8f00;
 =======
+=======
+>>>>>>> feature/bar_v2
 #optie3:hover{
 	border: none;
 	background: red;
 	box-shadow: 0px 0px 1px #777;
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> feature/bar_v2
 }
