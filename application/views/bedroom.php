@@ -5,7 +5,6 @@
 			var flashvars = {};
 			var params = {
 				"quality": "high",
-				"scale" : "noborder",
 				"wmode": "transparent"
 			};
 			var attributes = {
@@ -13,7 +12,7 @@
 				"doExpressInstall" : false
 			};
 			
-			swfobject.embedSWF("/swf/bar_v1.swf", "background", "50%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
+			swfobject.embedSWF("/swf/thuis_v1.swf", "background", "50%", "90%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
 		<div id="map-container">
@@ -55,25 +54,17 @@
 					<span class="amount">100%</span>
 					<span class="label">Energie</span>
 					
-									
-
 				</div>
 				
-				<form method="post" action="">
-    			<input type="radio" name="radio" value="optie1"/>Test
-     			<input type="radio" name="radio" value="optie2"/>Test 2			   
+				<a href="/index.php/bedroom/day"><p>Klik hier voor een nieuwe dag.</p></a>
+				
+				<!--<form method="post" action="">		   
    				 <input type="submit" name="submit" value="submit"/>
 				</form>
-
 				
-				
-		<!--<input action="" type="post" name="option1" value="Optie 1" id="optie1" /> -->
-
-
-				
+			<input action="" type="post" name="option1" value="Optie 1" id="optie1" /> -->				
 				
 
 				</div>
-	
 			</div>
-			</div>
+		</div>
