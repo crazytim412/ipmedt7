@@ -26,13 +26,15 @@ class Register extends CI_Controller {
 							
 				$check = $this->user_model->setUserDetails($this->input->post("email"), $hashedpassword, $birthdate);
 				
-				if($check > 0)
+				if($check > 1)
 				{
 					$data["error"]="Helaas, je email bestaat al in de database.";
 				}
 				else
 				{
 					$data["error"]="Gefeliciteerd, je bent geregistreerd.";
+					sleep(10);
+					redirect("/","refresh");
 				}
 			}
 			else
