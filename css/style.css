@@ -653,3 +653,18 @@ height:100%;
 	height: 187px;
 	background: #ff8f00;
 }
+
+.content_container {
+	position: absolute;
+	width: 550px;
+	
+	padding: 25px;
+	
+	top: 120px;
+	left: 50%;
+	margin-left: -300px;
+	
+	border-radius: 6px;
+	
+	background: #FFF;
+}

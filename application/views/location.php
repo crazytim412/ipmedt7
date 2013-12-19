@@ -1,6 +1,6 @@
 <?php $this->load->view("common/header_game"); ?>
 		<script type="text/javascript">
-			var energy = 1;
+			var energy = <?php echo $avatar_details['energy'];?>; 
 			
 			var flashvars = {};
 			var params = {
@@ -13,7 +13,7 @@
 				"doExpressInstall" : false
 			};
 			
-			swfobject.embedSWF("/swf/festival_v1.swf", "background", "70%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
+			swfobject.embedSWF("/swf/<?php echo $type;?>_v1.swf", "background", "50%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
 		<div id="map-container">
@@ -54,27 +54,19 @@
 					<div class="bar"></div>
 					<span class="amount">100%</span>
 					<span class="label">Energie</span>
-					
-									
 
 				</div>
-				
-				<form method="post" action="">
-    			<input type="radio" name="radio" value="optie1"/>Test
-     			<input type="radio" name="radio" value="optie2"/>Test 2			   
-   				 <input type="submit" name="submit" value="submit"/>
-				</form>
-
-				
-				
-		<!<input action="" type="post" name="option1" value="Optie 1" id="optie1" /> 
-
-
-				
-				
-
-				</div>
-
-	
 			</div>
+			
+			<div class="content_container">
+				Welkom in de kroeg<br>
+				U heeft nog <?php echo $this->session->userdata("consumptions_left"); ?> consumpties over.
+				<br><br>
+				
+				<?php foreach($consumptions->result() as $row): ?>
+				<a href="/index.php/location/consume/<?php echo $row->id; ?>/">Neem een <?php echo $row->name; ?> (<?php echo $row->consumption_weight; ?>) </a><br>
+				<?php endforeach; ?><br><br>
+				
+				<a href="/index.php/location/exitlocation">Verlaat de kroeg</a>
 			</div>
+		</div>
