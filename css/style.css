@@ -401,15 +401,19 @@ ul#header_stats li span {
 
 
 #optie1{
-	background-color: black;
+	background-color: #ff9900;
 	-moz-border-radius: 5px;
 	border-radius: 6px;
 	color: #fff;
-	font-size: 20px
+	font-size: 50px
 	text-decoration:none;
 	cursor: poiner;
 	border:none;
-	margin: 50px 200px 0 500px;
+	margin: 300px 350px 100px 500px;
+	width: 150px;
+	height:100px
+	font-size: 20px
+	position:absolute;
 
 }
 
@@ -419,37 +423,7 @@ ul#header_stats li span {
 	box-shadow: 0px 0px 1px #777;
 }
 
-#optie2{
-	background-color: black;
-	-moz-border-radius: 5px;
-	border-radius: 6px;
-	color: #fff;
-	font-size: 20px
-	text-decoration:none;
-	cursor: poiner;
-	border:none;
-	margin: 50px 200px 0 500px;
 
-}
-
-#optie2:hover{
-	border: none;
-	background: red;
-	box-shadow: 0px 0px 1px #777;
-}
-
-#optie3{
-	background-color: black;
-	-moz-border-radius: 5px;
-	border-radius: 6px;
-	color: #fff;
-	font-size: 20px
-	text-decoration:none;
-	cursor: poiner;
-	border:none;
-	margin: 50px 200px 0 500px;
-
-}
 
 <<<<<<< Updated upstream
 /*AVATAR creation*/
@@ -466,7 +440,7 @@ ul#header_stats li span {
 }
 
 >>>>>>> feature/bar_v2
-
+/*
 .optie1{
 	color: green;
 	-moz-border-radius: 5px;
@@ -478,7 +452,7 @@ ul#header_stats li span {
 	text-decoration:none;
 	position:absolute;
 	border:none;
-	margin: 50px 100px 0 500px;
+	margin: 50px 1px 0 500px;
 
 
 }
@@ -488,7 +462,7 @@ ul#header_stats li span {
 	background: red;
 	box-shadow: 0px 0px 1px #777;
 }
-/*
+
 
 #optie2{
 	background-color: black;

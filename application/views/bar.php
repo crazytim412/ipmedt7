@@ -54,11 +54,20 @@
 					<div class="bar"></div>
 					<span class="amount">100%</span>
 					<span class="label">Energie</span>
-				
+					
+									
 
 				</div>
 				
-				<input type="submit" name="option1" value="Optie 1" id="optie1" />
+				<form method="post" action="">
+    			<input type="radio" name="radio" value="optie1"/>Test
+     			<input type="radio" name="radio" value="optie2"/>Test 2			   
+   				 <input type="submit" name="submit" value="submit"/>
+				</form>
+
+				
+				
+		<!<input action="" type="post" name="option1" value="Optie 1" id="optie1" /> 
 
 
 				
