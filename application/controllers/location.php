@@ -38,11 +38,79 @@ class Location extends CI_Controller {
 	{
 		if($this->session->userdata("user_id"))
 		{
+			if($this->input->post())
+			{
+				
+			}
+			else
+			{
 			$this->load->model("avatar_model");
 		
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 		
 			$this->load->view("bar", $data);
+			}
+		}
+
+	}
+	
+		public function festival()
+	{
+		if($this->session->userdata("user_id"))
+		{
+			if($this->input->post())
+			{
+				
+			}
+			else
+			{
+			$this->load->model("avatar_model");
+		
+			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+		
+			$this->load->view("festival", $data);
+			}
+		}
+
+	}
+	
+		
+		public function thuis()
+	{
+		if($this->session->userdata("user_id"))
+		{
+			if($this->input->post())
+			{
+				
+			}
+			else
+			{
+			$this->load->model("avatar_model");
+		
+			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+		
+			$this->load->view("thuis", $data);
+			}
+		}
+
+	}
+	
+			public function disco()
+	{
+		if($this->session->userdata("user_id"))
+		{
+			if($this->input->post())
+			{
+				
+			}
+			else
+			{
+			$this->load->model("avatar_model");
+		
+			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+		
+			$this->load->view("disco", $data);
+			}
 		}
 
 	}

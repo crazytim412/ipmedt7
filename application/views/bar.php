@@ -13,7 +13,7 @@
 				"doExpressInstall" : false
 			};
 			
-			swfobject.embedSWF("/swf/bar_v1.swf", "background", "50%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
+			swfobject.embedSWF("/swf/bar_v1.swf", "background", "70%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
 		<div id="map-container">
@@ -76,8 +76,3 @@
 				</div>
 <<<<<<< HEAD
 
-	
-			</div>
-=======
-			</div>
->>>>>>> feature/bugfix_energie_meter
