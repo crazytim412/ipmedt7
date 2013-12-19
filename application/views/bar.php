@@ -18,9 +18,9 @@
 		</script>
 		<div id="map-container">
 			<div id="background">
-				
 			</div>
 			<div id="header">
+			asdfdsaf
 				<h1 class="logo"><img src="/img/logo.png" /></h1>
 				<ul id="header_stats">
 					<li>
@@ -47,6 +47,7 @@
 						<li><a href="/settings/">Instellingen</a></li>
 						<li><a href="/index.php/logout/">Uitloggen</a></li>
 					</ul>
+
 				</div>
 				<div class="clear"></div>
 				<!--<canvas id="energymeter"></canvas>-->
@@ -58,22 +59,8 @@
 									
 
 				</div>
-				
-				<form method="post" action="">
-    			<input type="radio" name="radio" value="optie1"/>Test
-     			<input type="radio" name="radio" value="optie2"/>Test 2			   
-   				 <input type="submit" name="submit" value="submit"/>
-				</form>
 
-				
-				
-		<!<input action="" type="post" name="option1" value="Optie 1" id="optie1" /> 
-
-
-				
-				
-
-				</div>
+		
 	
 			</div>
 			</div>
