@@ -58,8 +58,8 @@
 			</div>
 			<div id="map">
 				<ul id="labels">
-					<li class="festival"><p>Festival</p></li>
-					<li class="disco"><p>Disco</p></li>
+					<li class="festival"><a href="/index.php/location/festival"><p>Festival</p></a></li>
+					<li class="disco"><a href="/index.php/location/disco"><p>Disco</p></a></li>
 					<li class="bar"><a href="/index.php/location/bar"><p>Bar</p></a></li>
 					<li class="friends"><p>Vrienden</p></li>
 					<li class="home"><p>Thuis</p></li>

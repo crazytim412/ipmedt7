@@ -1,13 +1,11 @@
 <?php $this->load->view("common/header_game"); ?>
-		
-		
 		<script type="text/javascript">
 			var energy = 1;
 			
 			var flashvars = {};
 			var params = {
 				"quality": "high",
-				
+				"scale" : "noborder",
 				"wmode": "transparent"
 			};
 			var attributes = {
@@ -15,11 +13,9 @@
 				"doExpressInstall" : false
 			};
 			
-			swfobject.embedSWF("/swf/disco_v1.swf", "background", "70%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
+			swfobject.embedSWF("/swf/thuis_v1.swf", "background", "70%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
-		
-		
 		<div id="map-container">
 			<div id="background">
 				

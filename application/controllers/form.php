@@ -11,12 +11,12 @@ class Register extends CI_Controller {
 			$optie1 = $this->input->post("optie1");
 		
 			
-			if(isset($_POST['submit']))
+			
 			{
-				$check = $this->avatar_model->setAvatarDetails($this->input->post(energy, mood, score) VALUES ('20', '15', '50')";			
+				$this->avatar_model->setAvatarDetails($this->input->post(energy, mood, score) VALUES ('20', '15', '50'));			
 				}
 		
-		else()
+			else
 				{
 					$data["error"]="Maak een keuze";
 				}
