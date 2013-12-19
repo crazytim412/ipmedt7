@@ -18,27 +18,29 @@ class Diary_Model extends CI_Model
 	
 	function getDay($user_id)
 	{
-		$sql = "SELECT day FROM avatar WHERE `id` = ? ";
+		$sql = "SELECT day FROM avatar WHERE `user_id` = ? ";
 		
 		$result = $this->db->query($sql, $user_id);
 		
 		if($result->num_rows() > 0)
 		{
-			$row = $query->row();
+			$row = $result->row();
 			
 			$day = $row->day;
+			
+			return $day;
 		}
-		
-		return $day;
 	}
 	
 	function setDay($newDay)
 	{
-		$sql = "UPDATE diary SET `day` = ? WHERE `id` = ? ";
+		$sql = "UPDATE avatar SET `day` = ? WHERE `user_id` = ? ";
 		
-		$query_values = array($details['day'], $details['id']);
+		$user_id = $this->session->userdata("user_id");
 		
-		return $this->db->query($sql, $query_values);
+		$query_values = array($newDay, $user_id);
+		
+		$this->db->query($sql, $query_values);
 	}
 	
 	function addDiaryDetails($consumption_id, $location, $day, $time)
@@ -94,13 +96,22 @@ class Diary_Model extends CI_Model
 		$result = $this->db->query($sql, $user_id);
 	}
 	
-	function setNewData($user_id, $data)
+	function getOldHealth($user_id)
 	{
-		$sql = "UPDATE avatar SET `mood` = ?, `score` = ? WHERE `id` = ? ";
+		$sql = "SELECT health FROM avatar WHERE user_id = ?";
 		
-		$query_values = array($details['mood'], $details['score'], $user_id);
+		$result = $this->db->query($sql, $user_id);
+	}
+	
+	function setNewData($data)
+	{
+		$sql = "UPDATE avatar SET `mood` = ?, `score` = ?, `health` = ? WHERE `id` = ? ";
 		
-		return $this->db->query($sql, $query_values);
+		$user_id = $this->session->userdata("user_id");
+		
+		$query_values = array($data['mood'], $data['score'], $data['health'], $user_id);
+		
+		$this->db->query($sql, $query_values);
 	}
 }
 ?>
