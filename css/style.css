@@ -53,6 +53,8 @@ ul#header_stats li label {
 	font-size: 15px;
 	display: table-cell;
 	vertical-align: middle;
+	
+	background-color: rgba(0,0,0,0.3);
 }
 
 ul#header_stats li span {
@@ -83,6 +85,11 @@ ul#header_stats li span {
 #map-container #background {
 	z-index: 0;
 	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(/img/map.jpg);
+	background-size: cover;
+	background-position: center center;
 }
 
 #map-container #map #labels {
@@ -112,6 +119,10 @@ ul#header_stats li span {
 	font-size: 20px;
 	
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	
+	background-color: rgba(0,0,0,0.1);
+	
+	border-radius: 6px;
 	
 	line-height: 100%;
 	display: table-cell;
@@ -264,8 +275,67 @@ ul#header_stats li span {
 	float: right;
 	background: url('../img/menu.png') center left;
 	background-repeat:no-repeat ;
+	cursor: pointer;
 	
 }
+
+.dropdown-menu {
+	font-size: 14px;
+	list-style: none;
+}
+
+#optionsButMenu {
+	width: 150px;
+	position: absolute;
+	right: 20px;
+	top: 100px;
+	display: none;
+	background: #ccc;
+	
+}
+
+#optionsButMenu ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	font-size: 14px;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+	background-clip: padding-box;
+}
+
+#optionsButMenu ul li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+#optionsButMenu ul li a{
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-decoration: none;
+	color: #333;
+	white-space: nowrap;
+}
+#optionsButMenu ul li a:hover,
+#optionsButMenu ul li a:focus {
+	color: #262626;
+	text-decoration: none;
+	background-color: #f5f5f5;
+}
+
 
 #stats ul{
 	font-family: calibri; font-size: 16px;
@@ -284,8 +354,46 @@ ul#header_stats li span {
 }
 
 #energymeter{
+	width: 134px;
+	height: 281px;
+	position: absolute;
+	background: url(/img/energy-meter.png) no-repeat;
 	float: right;
-	margin-left: -100px;
+	top: 120px;
+	right: 20px;
+	z-index: 999;
+}
+
+#energymeter .amount {
+	width: 100%;
+	position: absolute;
+	bottom: 65px;
+	text-align: center;
+}
+
+#energymeter .bar {
+	position: absolute;
+	
+	left: 42px;
+	bottom: 139px;
+	
+	width: 40px;
+	
+	background: #ff8f00;
+	
+	border-radius: 4px 4px 0 0;
+}
+
+#energymeter .label {
+	width: 94%;
+	position: absolute;
+	text-align: center;
+	bottom: 95px;
+	margin-right: 10px;
+	
+	font-size: 20px;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	color: #FFF;
 }
 
 #vierkant { width: 1024px; height: 280px; background: #3A111C; 
@@ -381,6 +489,20 @@ ul#header_stats li span {
 	background: url('../img/but1_hov.jpg');
 }
 
+.but1{
+	border: none;
+	float: right;
+	color: #fff;
+	cursor: pointer;
+	width: 127px;
+	height: 49px;
+	background: url('../img/but1.jpg');
+}
+
+.but1:hover{
+	background: url('../img/but1_hov.jpg');
+}
+
 .error{
 	background: red;
 	float: right;
@@ -394,38 +516,10 @@ ul#header_stats li span {
 }
 
 #barBackground{
-	background-image: url('../img/bar.png');
-	height:100%;	
-<<<<<<< HEAD
+background-image: url('../img/bar.png');
+height:100%;	
 }
 
-
-#optie1{
-	background-color: #ff9900;
-	-moz-border-radius: 5px;
-	border-radius: 6px;
-	color: #fff;
-	font-size: 50px
-	text-decoration:none;
-	cursor: poiner;
-	border:none;
-	margin: 300px 350px 100px 500px;
-	width: 150px;
-	height:100px
-	font-size: 20px
-	position:absolute;
-
-}
-
-#optie1:hover{
-	border: none;
-	background: red;
-	box-shadow: 0px 0px 1px #777;
-}
-
-
-
-<<<<<<< Updated upstream
 /*AVATAR creation*/
 #creationFrame{
 	width: 996px;
@@ -436,80 +530,126 @@ ul#header_stats li span {
 	font-family: arial;
 	font-size: 12px;
 }
-=======
+
+#creationFrame h2{
+	font-size: 24px;
+	font-weight: 300;
 }
 
->>>>>>> feature/bar_v2
-/*
-.optie1{
-	color: green;
-	-moz-border-radius: 5px;
-	border-radius: 6px;
-	color: #fff;
-	height: 100px;
-     width: 400px;
-	font-size: 20px
-	text-decoration:none;
-	position:absolute;
-	border:none;
-	margin: 50px 1px 0 500px;
-
-
+#cF1{
+	width: 585px;
+	height: 569px;
+	float: left;
 }
 
-.optie1:hover{
+#cF2{
+	padding: 22px 25px 22px 20px;
+	margin-left: 10px;
+	width: 354px;
+	height: 569px;
+	float: left;
+}
+
+#avatarFields{
+	height: 54px;
+	background: #f03c02;
+	font-size: 20px;
+	padding: 5px;
+}
+
+#radio{
+	float: left;
+	margin: 15px 0px 0px 30px;
+}
+
+#radio input{
+	margin: 0px 10px 0px 10px;
+}
+
+#nickField{
+	width: 200px;
+	padding: 5px 10px;
+	margin: 5px 3px 0px 0px;
+	font-size: 20px;
 	border: none;
-	background: red;
-	box-shadow: 0px 0px 1px #777;
+	height: 35px;
+	float: right;
+	border-radius: 2px;
 }
 
-
-#optie2{
-	background-color: black;
-	-moz-border-radius: 5px;
-	border-radius: 6px;
-	color: #fff;
-	font-size: 20px
-	text-decoration:none;
-	cursor: poiner;
-	border:none;
-	margin: 50px 200px 0 500px;
-
+.block{
+	margin-bottom: 5px;
 }
 
-#optie2:hover{
-	border: none;
-	background: red;
-	box-shadow: 0px 0px 1px #777;
+.leftArrow{
+	background: url('/img/arrowleft.jpg');
+	width: 67px;
+	height: 68px;
+	float: left;
+	cursor: pointer;
+	margin: 35px 0px 0px 100px;
 }
 
-#optie3{
-	background-color: black;
-	-moz-border-radius: 5px;
-	border-radius: 6px;
-	color: #fff;
-	font-size: 20px
-	text-decoration:none;
-	cursor: poiner;
-	border:none;
-	margin: 50px 200px 0 500px;
-
+.rightArrow{
+	background: url('/img/arrowright.jpg');
+	width: 67px;
+	height: 68px;
+	float: right;
+	cursor: pointer;
+	margin: 35px 100px 0px 0px;
 }
-*/
 
-<<<<<<< HEAD
+#gameOverbackground{
+	background: #000000;		
+}
+
+#gameOverbackground h1{
+	font-size: 26px;
+	color: #FFFFFF;
+}
+
+#gameOverbackground h2{
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+#gameOverbackground p{
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.opaque1 {	// for all other browsers
+	opacity: .5;
+}
+
+#head{
+	height: 120px;
+	position: absolute;
+	margin: 18px 0px 0px 210px;
+}
+
+#body{
+
+	position: absolute;
+	margin: -1px 0px 0px 210px;
+}
+
+#legs{
+	position: absolute;
+	margin: -17px 0px 0px 210px;
+}
+
+#headBlock{
+	height: 135px;
+	background: #ff8f00;
+}
+
+#bodyBlock{
+	height: 171px;
+	background: #ff8f00;
+}
+
 #legBlock{
 	height: 187px;
 	background: #ff8f00;
-=======
-=======
->>>>>>> feature/bar_v2
-#optie3:hover{
-	border: none;
-	background: red;
-	box-shadow: 0px 0px 1px #777;
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> feature/bar_v2
 }
