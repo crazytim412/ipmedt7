@@ -53,7 +53,7 @@ class User_model extends CI_Model
 		}
 		else
 		{
-			return 1;
+			return 'fout';
 		}
 	}
 }

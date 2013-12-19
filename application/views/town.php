@@ -1,6 +1,6 @@
 <?php $this->load->view("common/header_game"); ?>
 		<script type="text/javascript">
-			var energy = 50;
+			var energy = <?php echo $avatar_details['energy'];?>;
 			
 			var flashvars = {};
 			var params = {

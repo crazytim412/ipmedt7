@@ -30,7 +30,7 @@ class Avatar_model extends CI_Model
 	function setAvatarCreate($nickname, $head_id, $shirt_id, $pants_id, $gender)
 	{
 		//$sql = "INSERT INTO avatar (`user_id`, `name`, `gender`, `energy`, `day`, `mood`, `score`, `day`, `head_id`, `shirt_id`, `pants_id`, `shoes_id`) VALUES (?,?,?,?,?,?) WHERE user_id = ?";
-		$sql = "INSERT INTO avatar (`user_id`, `name`, `head_id`, `shirt_id`, `pants_id`, `gender`) VALUES (?,?,?,?,?,?)";
+		$sql = "INSERT INTO avatar (`user_id`, `name`, `head_id`, `shirt_id`, `pants_id`, `gender`, `energy`) VALUES (?,?,?,?,?,?,'100')";
 		
 		$query_values = array($this->session->userdata('user_id'), $nickname, $head_id, $shirt_id, $pants_id, $gender);
 		

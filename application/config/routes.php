@@ -38,9 +38,13 @@
 |
 */
 
-$route['default_controller'] = "home";
-$route['logout'] = "home/logout";
-$route['404_override'] = '';
+$route['default_controller'] = 			"home";
+$route['logout'] = 						"home/logout";
+$route['location/consume/(:num)'] = 	"location/consume/$1";
+$route['location/exitlocation'] = 		"location/exitlocation";
+$route['location/enter/(:any)'] = 		"location/enter/$1";
+$route['location/(:any)'] = 			"location/location_select/$1";
+$route['404_override'] = 				"";
 
 
 /* End of file routes.php */

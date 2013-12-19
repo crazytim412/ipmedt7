@@ -74,10 +74,6 @@
 				
 
 				</div>
-<<<<<<< HEAD
-
 	
 			</div>
-=======
 			</div>
->>>>>>> feature/bugfix_energie_meter

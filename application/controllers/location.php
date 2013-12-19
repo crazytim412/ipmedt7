@@ -6,24 +6,21 @@ class Location extends CI_Controller {
 	{
 		// Kijken of de user al ingelogd is
 		if($this->session->userdata("user_id"))
-		{
-			$this->load->model("avatar_model");
-			$this->load->model("location_model");
-
-			
-			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
-			
+		{			
 			if($this->session->userdata("inside_location") == true)
 			{
+				$this->load->model("avatar_model");
+			
+				$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 				$this->load->model("consumptions_model");
 				
 				$data['consumptions'] = $this->consumptions_model->getAllConsumptions();
 				
-				$this->load->view("map",$data);
+				$this->load->view("location_bar",$data);
 			}
 			else
 			{
-				$this->load->view("location_entrance",$data);
+				redirect("/","refresh");
 			}
 		}
 		// De user is nog niet ingelogd, toon het inlogscherm
@@ -34,18 +31,32 @@ class Location extends CI_Controller {
 		}
 	}
 	
-	public function bar()
+	public function location_select($type = null)
 	{
+		// Kijken of de user al ingelogd is
 		if($this->session->userdata("user_id"))
 		{
 			$this->load->model("avatar_model");
-		
-			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
-		
-			$this->load->view("bar", $data);
+			
+			if($this->session->userdata("inside_location") != true)
+			{
+				$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+				$data['type'] = $type;
+				$this->load->view("location_entrance",$data);
+			}
+			else
+			{
+				redirect("/location", "refresh");
+			}
 		}
-
+		// De user is nog niet ingelogd, toon het inlogscherm
+		else
+		{
+			// Ververs de pagina om het inlogscherm te tonen
+			redirect("/","refresh");
+		}
 	}
+	
 	
 	public function consume($consumption_id)
 	{
@@ -66,16 +77,18 @@ class Location extends CI_Controller {
 		}	
 	}
 	
-	public function enter()
+	public function enter($type)
 	{
 		$this->load->model("avatar_model");
 			
 		$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+		$data['type'] = $type;
 		
 		if($data['avatar_details']['energy'] >= 20)
 		{
 			$this->session->set_userdata("inside_location",true);
 			$this->session->set_userdata("consumptions_left",10);
+			$this->session->set_userdata("type", $type);
 			$data['avatar_details']['energy'] -= 20;
 			
 			$this->avatar_model->setAvatarDetails($data['avatar_details']);

@@ -1,14 +1,12 @@
 <?php $this->load->view("common/header");?>
 <div id="frameLogin">
     <div id="hugeLogo"></div>
-	<div class="error">
-		<?php
-			if($error)
-			{
-				print $error;
-			}
-		?>
+	
+		<?php if(@$error): ?>
+		<div class="error">
+			<?php echo $error; ?>
 		</div>
+		<?php endif; ?>
     <div id="orangeBox">
         <h1>Registreren</h1>
         <form action="" method="POST">

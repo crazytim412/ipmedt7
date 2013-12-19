@@ -22,11 +22,11 @@ class Diary_Model extends CI_Model
 		
 		$result = $this->db->query($sql, $user_id);
 		
-		if($result->num_rows(); > 0)
+		if($result->num_rows() > 0)
 		{
 			$row = $query->row();
 			
-			$day->'day';
+			$day = $row->day;
 		}
 		
 		return $day;
