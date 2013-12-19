@@ -61,8 +61,8 @@
 					<li class="festival"><a href="/index.php/location/festival"><p>Festival</p></a></li>
 					<li class="disco"><a href="/index.php/location/disco"><p>Disco</p></a></li>
 					<li class="bar"><a href="/index.php/location/bar"><p>Bar</p></a></li>
-					<li class="friends"><p>Vrienden</p></li>
-					<li class="home"><p>Thuis</p></li>
+					<li class="friends"><a href="/index.php/location/vrienden"><p>Vrienden</p></a></li>
+					<li class="home"><a href="/index.php/bedroom"><p>Thuis</p></a></li>
 				</ul>
 			</div>
 		</div>

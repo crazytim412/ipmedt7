@@ -22,7 +22,10 @@ $(document).ready(function(){
 		}
 	});
 	
-	$.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#FFFFFF' });
+	if($("#map #labels").length > 0)
+	{
+		$.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#FFFFFF' });
+	}
 });
 
 $(window).load(function(){
