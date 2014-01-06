@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Diary_Model extends CI_Model
+class diary_model extends CI_Model
 {
 
 	function __construct()
@@ -88,6 +88,8 @@ class Diary_Model extends CI_Model
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
 					WHERE d.user_id = ? and d.day = ?";
+		
+		$result = $this->db->query($sql, array($user_id, $day));	
 	}
 	
 	function getOldScore($user_id)
