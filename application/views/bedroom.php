@@ -31,6 +31,10 @@
 						<span><?php echo $avatar_details['energy'];?></span>
 					</li>
 					<li>
+						<label>Gezondheid</label>
+						<span><?php echo $avatar_details['health'];?></span>
+					</li>
+					<li>
 						<label>Dag</label> 
 						<span><?php echo $avatar_details['day'];?></span>
 					</li>
@@ -55,8 +59,13 @@
 					<span class="label">Energie</span>
 					
 				</div>
-				
-				<a href="/index.php/bedroom/day"><p>Klik hier voor een nieuwe dag.</p></a>
+				<div class="content_container">
+				<p>
+					Je hebt tot nu toe deze consumpties tot je genomen:<br>
+					<?php ?>
+				</p>
+					<a href="/index.php/bedroom/day"><p>Klik hier voor een nieuwe dag.</p></a>
+				</div>
 				
 				<!--<form method="post" action="">		   
    				 <input type="submit" name="submit" value="submit"/>

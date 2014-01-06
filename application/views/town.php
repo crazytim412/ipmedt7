@@ -32,6 +32,10 @@
 						<span><?php echo $avatar_details['energy'];?></span>
 					</li>
 					<li>
+						<label>Gezondheid</label>
+						<span><?php echo $avatar_details['health'];?></span>
+					</li>
+					<li>
 						<label>Dag</label> 
 						<span><?php echo $avatar_details['day'];?></span>
 					</li>
