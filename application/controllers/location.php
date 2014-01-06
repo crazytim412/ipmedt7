@@ -74,7 +74,19 @@ class Location extends CI_Controller {
 			
 			$this->session->set_userdata('consumptions_left', $consumptions_left-1);
 			
-			redirect("/location","refresh");
+			print $this->session->userdata("consumptions_left");
+		}
+		else
+		{
+			$this->load->model("avatar_model");
+			
+			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+			$data['type'] = $this->session->userdata("type");
+			$this->load->model("consumptions_model");
+				
+			$data['consumptions'] = $this->consumptions_model->getAllConsumptions();
+			
+			print -1;
 		}	
 	}
 	

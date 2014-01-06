@@ -59,14 +59,30 @@
 			</div>
 			
 			<div class="content_container">
-				Welkom in de kroeg<br>
-				U heeft nog <?php echo $this->session->userdata("consumptions_left"); ?> consumpties over.
-				<br><br>
-				
-				<?php foreach($consumptions->result() as $row): ?>
-				<a href="/index.php/location/consume/<?php echo $row->id; ?>/">Neem een <?php echo $row->name; ?> (<?php echo $row->consumption_weight; ?>) </a><br>
-				<?php endforeach; ?><br><br>
-				
-				<a href="/index.php/location/exitlocation">Verlaat de kroeg</a>
+				<div class="text-container">
+					<b><div class="error_message"></div></b><br><br>
+					
+					Welkom in de kroeg<br>
+					U heeft nog <span class="consumptions_left"><?php echo $this->session->userdata("consumptions_left"); ?></span> consumpties over.
+					<br><br>
+					<div class="consumptions">
+						<?php foreach($consumptions->result() as $row): ?>
+						<a href="#" data-id="<?php echo $row->id; ?>" class="consumption">Neem een <?php echo $row->name; ?> (<?php echo $row->consumption_weight; ?>) </a><br>
+						<?php endforeach; ?><br><br>
+					</div>
+					
+					<a href="/index.php/location/exitlocation">Verlaat de kroeg</a>
+				</div>
+					
+				<div id="avaFemale">
+					<div id="avaHead">
+						<div id="avaFace" style="background: #e29857 url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
+						<div id="avaNeck"></div>
+					</div>
+					<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/1.png) center no-repeat;"></div>
+					<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/2.png) center no-repeat;"></div>
+					<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/3.png) center no-repeat;"></div>
+				</div>
+				<div class="clear"></div>
 			</div>
 		</div>
