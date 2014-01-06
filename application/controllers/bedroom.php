@@ -78,9 +78,12 @@ class Bedroom extends CI_Controller {
 		
 		$mood = $this->Diary_Model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
 		$health = $this->Diary_Model->getTotalHealthAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
-		$consumption = $this->Diary_Model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$consumptionWeight = $this->Diary_Model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$consumptions = $this->Diary_Model->getConsumptionsTotal($data['avatar_details']['user_id'], $data['avatar_details']['day']);
 		
-		$this->load->view("town",$mood, $health, $consumption);		
+		$data = array($mood, $health, $consumptionWeight, $comsumptions);
+		
+		$this->load->view("bedroom", $data);		
 	}
 }
 

@@ -20,7 +20,6 @@
 			<div id="background">
 			</div>
 			<div id="header">
-			asdfdsaf
 				<h1 class="logo"><img src="/img/logo.png" /></h1>
 				<ul id="header_stats">
 					<li>
@@ -55,12 +54,6 @@
 					<div class="bar"></div>
 					<span class="amount">100%</span>
 					<span class="label">Energie</span>
-					
-									
-
-				</div>
-
-		
-	
-			</div>
-			</div>
+			</div>	
+		</div>
+	</div>
