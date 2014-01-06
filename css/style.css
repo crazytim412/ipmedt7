@@ -384,16 +384,14 @@ ul#header_stats li span {
 }
 
 #energymeter .bar {
+	width: 134px;
+	height: 281px;
 	position: absolute;
+	background: url(/img/energy-meter-fill.png) no-repeat;
+	background-position: center bottom;
 	
-	left: 42px;
-	bottom: 139px;
-	
-	width: 40px;
-	
-	background: #ff8f00;
-	
-	border-radius: 4px 4px 0 0;
+	right: 4px;
+	bottom: 13px;
 }
 
 #energymeter .label {

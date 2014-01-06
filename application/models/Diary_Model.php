@@ -52,34 +52,46 @@ class diary_model extends CI_Model
 		return $this->db->query($sql, $query_values);
 	}
 	
-	function getTotalMoodAffection($user_id, $day)
+	function getTotalMoodAffection($day,$user_id)
 	{
-		$sql = "SELECT SUM(c.mood_affection)
+		$sql = "SELECT SUM(c.mood_affection) as tot
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
-					WHERE d.user_id = ? and d.day = ?";
+				WHERE d.user_id = ? and d.day = ?";
 		
 		$result = $this->db->query($sql, array($user_id, $day));
+		
+		$row = $result->row_array();
+		
+		return $row['tot'];
 	}
 	
-	function getTotalHealthAffection($user_id, $day)
+	function getTotalHealthAffection($day, $user_id)
 	{
-		$sql = "SELECT SUM(c.health_affection)
+		$sql = "SELECT SUM(c.health_affection) as tot
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
-					WHERE d.user_id = ? and d.day = ?";
+				WHERE d.user_id = ? and d.day = ?";
 		
 		$result = $this->db->query($sql, array($user_id, $day));
+		
+		$row = $result->row_array();
+		
+		return $row['tot'];
 	}
 	
-	function getTotalConsumptionWeight($user_id, $day)
+	function getTotalConsumptionWeight($day, $user_id)
 	{
-		$sql = "SELECT SUM(c.consumption_weight)
+		$sql = "SELECT SUM(c.consumption_weight) as tot
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
-					WHERE d.user_id = ? and d.day = ?";
+				WHERE d.user_id = ? and d.day = ?";
 		
 		$result = $this->db->query($sql, array($user_id, $day));
+		
+		$row = $result->row_array();
+		
+		return $row['tot'];
 	}
 	
 	function getComsumptions($user_id, $day)
@@ -87,7 +99,7 @@ class diary_model extends CI_Model
 		$sql = "SELECT c.name
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
-					WHERE d.user_id = ? and d.day = ?";
+				WHERE d.user_id = ? and d.day = ?";
 		
 		$result = $this->db->query($sql, array($user_id, $day));	
 	}
@@ -115,11 +127,13 @@ class diary_model extends CI_Model
 	
 	function setNewData($data)
 	{
-		$sql = "UPDATE avatar SET `mood` = ?, `score` = ?, `health` = ? WHERE `id` = ? ";
+		$sql = "UPDATE avatar SET `mood` = ?, `score` = ?, `health` = ?, `energy` = ? WHERE `user_id` = ? ";
 		
+		
+		print $sql;
 		$user_id = $this->session->userdata("user_id");
 		
-		$query_values = array($data['mood'], $data['score'], $data['health'], $user_id);
+		$query_values = array($data['mood'], $data['score'], $data['health'], $data['energy'], $user_id);
 		
 		$this->db->query($sql, $query_values);
 	}

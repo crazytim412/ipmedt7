@@ -42,13 +42,19 @@ class Bedroom extends CI_Controller {
 			$newMood = $this->Diary_Model->getTotalMoodAffection($day, $user_id);
 			$newHealth = $this->Diary_Model->getTotalHealthAffection($day, $user_id);
 			$newScore = $this->Diary_Model->getTotalConsumptionWeight($day, $user_id);
-			
+
 			$oldScore = $this->Diary_Model->getOldScore($user_id);
 			$oldHealth = $this->Diary_Model->getOldHealth($user_id);
 			$oldMood = $this->Diary_Model->getOldHealth($user_id);
 			
-			$currentMood = $oldMood - $newMood;
-			$currentHealth = $oldHealth - $oldHealth;
+			if($newHealth > -20) 							$newEnergy = 100;
+			elseif($newHealth <= -20 && $newHealth > -40) 	$newEnergy = 80;
+			elseif($newHealth <= -40 && $newHealth > -60)	$newEnergy = 60;
+			elseif($newHealth <= -60 && $newHealth > -80)	$newEnergy = 50;
+			else											$newEnergy = 30;
+			
+			$currentMood = $oldMood + $newMood;
+			$currentHealth = $oldHealth + $newHealth;
 			
 			//van uit gaand, dat $currentMood/$calMood een waarde tussen de 0,5 en 1,5 krijgt
 			$calMood = $currentMood;
@@ -58,10 +64,10 @@ class Bedroom extends CI_Controller {
 			
 			$currentScore = $newScore + $oldScore;
 			
-			$data = array("mood" => $currentMood, "score" => $currentScore, "health" => $currentHealth);
+			$data = array("mood" => $currentMood, "score" => $currentScore, "health" => $currentHealth, "energy" => $newEnergy);
 			
 			$this->Diary_Model->setNewData($data);
-			
+
 			$dataView['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
 			$this->load->view("bedroom",$dataView);
