@@ -28,24 +28,24 @@ class Bedroom extends CI_Controller {
 		// Kijken of de user al ingelogd is
 		if($this->session->userdata("user_id"))
 		{
-			$this->load->model("Diary_Model");
+			$this->load->model("diary_model");
 			$this->load->model("avatar_model");
 		
-			$day = $this->Diary_Model->getDay($user_id);
+			$day = $this->diary_model->getDay($user_id);
 			
 			$oudeDay = $day;
 			
 			$newDay = $day + 1;
 
-			$this->Diary_Model->setDay($newDay);
+			$this->diary_model->setDay($newDay);
 			
-			$newMood = $this->Diary_Model->getTotalMoodAffection($day, $user_id);
-			$newHealth = $this->Diary_Model->getTotalHealthAffection($day, $user_id);
-			$newScore = $this->Diary_Model->getTotalConsumptionWeight($day, $user_id);
+			$newMood = $this->diary_model->getTotalMoodAffection($day, $user_id);
+			$newHealth = $this->diary_model->getTotalHealthAffection($day, $user_id);
+			$newScore = $this->diary_model->getTotalConsumptionWeight($day, $user_id);
 			
-			$oldScore = $this->Diary_Model->getOldScore($user_id);
-			$oldHealth = $this->Diary_Model->getOldHealth($user_id);
-			$oldMood = $this->Diary_Model->getOldHealth($user_id);
+			$oldScore = $this->diary_model->getOldScore($user_id);
+			$oldHealth = $this->diary_model->getOldHealth($user_id);
+			$oldMood = $this->diary_model->getOldHealth($user_id);
 			
 			$currentMood = $oldMood - $newMood;
 			$currentHealth = $oldHealth - $oldHealth;
@@ -60,7 +60,7 @@ class Bedroom extends CI_Controller {
 			
 			$data = array("mood" => $currentMood, "score" => $currentScore, "health" => $currentHealth);
 			
-			$this->Diary_Model->setNewData($data);
+			$this->diary_model->setNewData($data);
 			
 			$dataView['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
@@ -74,11 +74,11 @@ class Bedroom extends CI_Controller {
 	
 	public function report()
 	{
-		$this->load->model("Diary_Model");
+		$this->load->model("diary_model");
 		
-		$mood = $this->Diary_Model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
-		$health = $this->Diary_Model->getTotalHealthAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
-		$consumption = $this->Diary_Model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$mood = $this->diary_model->getTotalMoodAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$health = $this->diary_model->getTotalHealthAffection($data['avatar_details']['user_id'], $data['avatar_details']['day']);
+		$consumption = $this->diary_model->getTotalConsumptionWeight($data['avatar_details']['user_id'], $data['avatar_details']['day']);
 		
 		$this->load->view("town",$mood, $health, $consumption);		
 	}

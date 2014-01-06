@@ -55,12 +55,6 @@
 					<div class="bar"></div>
 					<span class="amount">100%</span>
 					<span class="label">Energie</span>
-					
-									
-
 				</div>
-
-		
-	
-			</div>
-			</div>
+		</div>
+	</div>
