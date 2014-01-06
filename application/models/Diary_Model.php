@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Diary_Model extends CI_Model
+class diary_model extends CI_Model
 {
 
 	function __construct()
@@ -82,6 +82,16 @@ class Diary_Model extends CI_Model
 		$result = $this->db->query($sql, array($user_id, $day));
 	}
 	
+	function getComsumptions($user_id, $day)
+	{
+		$sql = "SELECT c.name
+				FROM diary d 
+				JOIN consumptions c ON d.consumption_id = c.id
+					WHERE d.user_id = ? and d.day = ?";
+		
+		$result = $this->db->query($sql, array($user_id, $day));	
+	}
+	
 	function getOldScore($user_id)
 	{
 		$sql = "SELECT score FROM avatar WHERE user_id = ?";
@@ -113,5 +123,6 @@ class Diary_Model extends CI_Model
 		
 		$this->db->query($sql, $query_values);
 	}
+	
 }
 ?>
