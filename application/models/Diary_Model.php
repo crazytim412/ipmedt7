@@ -94,7 +94,7 @@ class diary_model extends CI_Model
 		return $row['tot'];
 	}
 	
-	function getComsumptions($user_id, $day)
+	function getConsumptions($user_id, $day)
 	{
 		$sql = "SELECT c.name
 				FROM diary d 
@@ -102,10 +102,18 @@ class diary_model extends CI_Model
 				WHERE d.user_id = ? and d.day = ?";
 		
 		$query = $this->db->query($sql, array($user_id, $day));
+		$check = $query;
 		
 		$result =$query->result_array();
-		
-		return $result;
+		if($check->num_rows() > 0)
+		{
+			return $result;
+		}
+		else
+		{
+			$leeg = array("U heeft nog niets gedronken.");
+			return $leeg;
+		}
 	}
 	
 	function getOldScore($user_id)
