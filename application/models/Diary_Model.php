@@ -101,7 +101,11 @@ class diary_model extends CI_Model
 				JOIN consumptions c ON d.consumption_id = c.id
 				WHERE d.user_id = ? and d.day = ?";
 		
-		$result = $this->db->query($sql, array($user_id, $day));	
+		$query = $this->db->query($sql, array($user_id, $day));
+		
+		$result =$query->result_array();
+		
+		return $result;
 	}
 	
 	function getOldScore($user_id)

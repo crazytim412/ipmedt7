@@ -62,7 +62,13 @@
 				<div class="content_container">
 				<p>
 					Je hebt tot nu toe deze consumpties tot je genomen:<br>
-					<?php ?>
+					<?php 
+						foreach($consumptions_name as $cn)
+						{
+							echo $cn;
+							echo "<br>";
+						}
+					?>
 				</p>
 					<a href="/index.php/bedroom/day"><p>Klik hier voor een nieuwe dag.</p></a>
 				</div>

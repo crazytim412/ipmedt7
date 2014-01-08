@@ -9,8 +9,10 @@ class Bedroom extends CI_Controller {
 			$this->load->model("avatar_model");
 		
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+			
+			$consumptions['consumptions_name'] = $this->Diary_Model->
 		
-			$this->load->view("bedroom", $data);
+			$this->load->view("bedroom", $data, $consumptions);
 		}
 		else
 		{
@@ -93,9 +95,7 @@ class Bedroom extends CI_Controller {
 	
 	public function comsumptions()
 	{
-		$consumptions = $this->Diary_Model->getConsumptions($data['avatar_details']['user_id'], $data['avatar_details']['day']);
-		
-		$this->load->view("bedroom", $consumptions);
+
 	}
 }
 
