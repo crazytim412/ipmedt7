@@ -532,8 +532,8 @@ height:100%;
 
 /*AVATAR creation*/
 #creationFrame{
+	display: none;
 	width: 996px;
-	height: 570px;
 	margin: 0px auto;
 	background: #4c4047;
 	color: #fff;
@@ -548,7 +548,6 @@ height:100%;
 
 #cF1{
 	width: 585px;
-	height: 569px;
 	float: left;
 }
 
@@ -655,13 +654,49 @@ height:100%;
 }
 
 #bodyBlock{
-	height: 171px;
+	height: 170px;
 	background: #ff8f00;
 }
 
 #legBlock{
 	height: 187px;
 	background: #ff8f00;
+}
+
+#optionsBlock{
+	height: 107px;
+	background: #ff8f00;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.skin{
+	float: left;
+	margin: 0px 0px 0px 4px;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	border: 1px solid #2c1501;
+}
+
+#skin1{
+	background: #e29857;
+}
+
+#skin2{
+	background: #df873a;
+}
+
+#skin3{
+	background: #dc7923;
+}
+
+#skin4{
+	background: #a64e00;
+}
+
+#skin5{
+	background: #2c1501;
 }
 
 .content_container {

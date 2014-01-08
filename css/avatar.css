@@ -1,3 +1,4 @@
+/*Female avatar*/
 #avaFemale{
 	width: 165px;
 	margin: 50px;
@@ -7,13 +8,12 @@
 #avaHair{
 	width: 150px;
 	height: 120px;
-	background: url('../img/characters/vrouw/kapsels/kapsel3.png') center no-repeat;
 	position: absolute;
-	margin: 0px 0px 0px 5px;
+	margin: -5px 0px 0px 5px;
 }
 
 #avaNeck{
-	width: 32px;
+	width: 33px;
 	height: 15px;
 	background: #e29857;
 	margin: 0px 0px 0px 60px;
@@ -21,10 +21,10 @@
 
 #avaFace{
 	width: 80px;
-	height: 82px;
-	border-radius: 3px;
-	background: ;
+	height: 81px;
+	border-radius: 6px;
 	margin: 20px 0px 0px 38px;
+	background: #e29857 url(/img/characters/vrouw/emoties/blij.png) center 27px no-repeat;
 }
 
 #avaHead{
@@ -43,8 +43,30 @@
 
 #avaLegs{
 	margin: 267px 0px 0px 0px;
-	background: url('../img/characters/vrouw/broek/bruin.png') center no-repeat;
 	width: 165px;
 	height: 202px;
 	position: absolute;
+}
+
+/*Male avatar*/
+#avaMale{
+	width: 165px;
+	margin: 50px;
+	position: absolute;
+}
+
+#avaHairMale{
+	width: 120px;
+	height: 70px;
+	position: absolute;
+	margin: -32px 0px 0px 23px;
+	background: url(/img/characters/man/kapsels/1.png) center bottom no-repeat;
+}
+
+#avaFaceMale{
+	background: #e29857 url(/img/characters/man/emoties/blij.png) center 19px no-repeat;
+	width: 80px;
+	height: 72px;
+	border-radius: 3px;
+	margin: 30px 0px 0px 38px;
 }
