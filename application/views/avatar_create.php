@@ -1,105 +1,89 @@
 <?php $this->load->view("common/header_game"); ?>
 
-<script>
-$(function () { //document ready
-
-	//array aanmaken met kapsel keuze
-	var kapsel = ['1', '2', '3', '4'],
-		counter1 = 0;
-	// the next line, of course, assumes you have an element with id="next"
-	$('#nextHead').click(function () {
-		counter1 = (counter1 + 1) % kapsel.length; // counter optellen
-		//html veranderen
-		$( '#avaHair' ).css( "background", "url(/img/characters/vrouw/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
-		$('input[type=text]#headId').val(lichaam[counter1]);
+	<script>
+	$(function () { //document ready
+	
+		//array aanmaken met kapsel keuze
+		var kapsel = ['1', '2', '3', '4'],
+			counter1 = 0;
+		// the next line, of course, assumes you have an element with id="next"
+		$('#nextHead').click(function () {
+			counter1 = (counter1 + 1) % kapsel.length; // counter optellen
+			//html veranderen
+			$( '#avaHair' ).css( "background", "url(/img/characters/vrouw/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
+			$('input[type=text]#headId').val(lichaam[counter1]);
+		});
+	
+		$('#prevHead').click(function () {
+			counter1 = (counter1 - 1) % kapsel.length; // counter aftrekken
+			//negatief getal preventie
+			if(counter1 < 0){
+				counter1 = 2;
+			}
+			//html veranderen
+			$( '#avaHair' ).css( "background", "url(/img/characters/vrouw/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
+			$('input[type=text]#headId').val(lichaam[counter1]);
+		});
+	
+		//array aanmaken met lichaams keuze
+		var lichaam = ['1', '2', '3', '4'],
+			counter2 = 0;
+		$('#nextBody').click(function () {
+			counter2 = (counter2 + 1) % lichaam.length; // counter optellen
+			//html veranderen
+			$( '#avaBody' ).css( "background", "url(/img/characters/vrouw/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
+			$('input[type=text]#bodyId').val(lichaam[counter2]);
+			console.log(lichaam[counter2]); // counter optellen
+		});
+	
+		$('#prevBody').click(function () {
+			counter2 = (counter2 - 1) % lichaam.length; // counter aftrekken
+			//negatief getal preventie
+			if(counter2 < 0){
+				counter2 = 2;
+			}
+			//html veranderen
+			$( '#avaBody' ).css( "background", "url(/img/characters/vrouw/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
+			$('input[type=text]#bodyId').val(lichaam[counter2]);
+		});
+	
+		//array aanmaken met broek keuze
+		var broek = ['1', '2', '3', '4'],
+			counter3 = 0;
+		$('#nextLegs').click(function () {
+			counter3 = (counter3 + 1) % broek.length; // increment your counter
+			//html veranderen
+			$( '#avaLegs' ).css( "background", "url(/img/characters/vrouw/broek/"+broek[counter3]+".png) center no-repeat" );
+			$('input[type=text]#legsId').val(lichaam[counter3]);
+		});
+	
+		$('#prevLegs').click(function () {
+			//negatief getal preventie
+			counter3 = (counter3 - 1) % broek.length; // increment your counter
+			if(counter3 < 0){
+				counter3 = 2;
+			}
+			//html veranderen
+			$( '#avaLegs' ).css( "background", "url(/img/characters/vrouw/broek/"+broek[counter3]+".png) center no-repeat" );
+			$('input[type=text]#legsId').val(lichaam[counter3]);
+		});
 	});
+	var energy = 50;
+	
+	var flashvars = {};
+	var params = {
+		"quality": "high",
+		"scale" : "noborder",
+		"wmode": "transparent"
+	};
+	var attributes = {
+		"useExpressInstall" : false,
+		"doExpressInstall" : false
+	};
+	
+	swfobject.embedSWF("/swf/locationmap.swf", "background", "100%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
-	$('#prevHead').click(function () {
-		counter1 = (counter1 - 1) % kapsel.length; // counter aftrekken
-		//negatief getal preventie
-		if(counter1 < 0){
-			counter1 = 2;
-		}
-		//html veranderen
-		$( '#avaHair' ).css( "background", "url(/img/characters/vrouw/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
-		$('input[type=text]#headId').val(lichaam[counter1]);
-	});
-
-	//array aanmaken met lichaams keuze
-	var lichaam = ['1', '2', '3', '4'],
-		counter2 = 0;
-	$('#nextBody').click(function () {
-		counter2 = (counter2 + 1) % lichaam.length; // counter optellen
-		//html veranderen
-		$( '#avaBody' ).css( "background", "url(/img/characters/vrouw/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
-		$('input[type=text]#bodyId').val(lichaam[counter2]);
-		console.log(lichaam[counter2]); // counter optellen
-	});
-
-	$('#prevBody').click(function () {
-		counter2 = (counter2 - 1) % lichaam.length; // counter aftrekken
-		//negatief getal preventie
-		if(counter2 < 0){
-			counter2 = 2;
-		}
-		//html veranderen
-		$( '#avaBody' ).css( "background", "url(/img/characters/vrouw/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
-		$('input[type=text]#bodyId').val(lichaam[counter2]);
-	});
-
-	//array aanmaken met broek keuze
-	var broek = ['1', '2', '3', '4'],
-		counter3 = 0;
-	$('#nextLegs').click(function () {
-		counter3 = (counter3 + 1) % broek.length; // increment your counter
-		//html veranderen
-		$( '#avaLegs' ).css( "background", "url(/img/characters/vrouw/broek/"+broek[counter3]+".png) center no-repeat" );
-		$('input[type=text]#legsId').val(lichaam[counter3]);
-	});
-
-	$('#prevLegs').click(function () {
-		//negatief getal preventie
-		counter3 = (counter3 - 1) % broek.length; // increment your counter
-		if(counter3 < 0){
-			counter3 = 2;
-		}
-		//html veranderen
-		$( '#avaLegs' ).css( "background", "url(/img/characters/vrouw/broek/"+broek[counter3]+".png) center no-repeat" );
-		$('input[type=text]#legsId').val(lichaam[counter3]);
-	});
-});
 </script>
-
-<!--
-<div id="avaFemale">
-<div id="avaHead">
-	<div id="avaFace" style="background: #e29857 url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
-	<div id="avaNeck"></div>
-</div>
-<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/1.png) center no-repeat;"></div>
-<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/2.png) center no-repeat;"></div>
-<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/3.png) center no-repeat;"></div>
-</div>-->
-
-
-<?php $this->load->view("common/header_game"); ?>
-		<script type="text/javascript">
-			var energy = 50;
-			
-			var flashvars = {};
-			var params = {
-				"quality": "high",
-				"scale" : "noborder",
-				"wmode": "transparent"
-			};
-			var attributes = {
-				"useExpressInstall" : false,
-				"doExpressInstall" : false
-			};
-			
-			swfobject.embedSWF("/swf/locationmap.swf", "background", "100%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
-
-		</script>
 		<div id="map-container">
 			<div id="background">
 				
