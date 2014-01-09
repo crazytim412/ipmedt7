@@ -130,7 +130,6 @@ function changeSkinColor(color){
 
 </script>
 
-<?php $this->load->view("common/header_game"); ?>
 		<script type="text/javascript">
 			var energy = 50;
 			
