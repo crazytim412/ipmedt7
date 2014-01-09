@@ -513,6 +513,20 @@ ul#header_stats li span {
 	background: url('../img/but1_hov.jpg');
 }
 
+.but2{
+	border: none;
+	float: center;
+	color: #fff;
+	cursor: pointer;
+	width: 127px;
+	height: 49px;
+	background: url('../img/but1.jpg');
+}
+
+.but2:hover{
+	background: url('../img/but1_hov.jpg');
+}
+
 .error{
 	background: red;
 	float: right;
@@ -613,8 +627,9 @@ height:100%;
 }
 
 #gameOverbackground h1{
-	font-size: 26px;
-	color: #FFFFFF;
+	font-size: 26px color #DC143C;
+	font-color: #DC143C;
+	color: #DC143C;
 }
 
 #gameOverbackground h2{
@@ -625,6 +640,10 @@ height:100%;
 #gameOverbackground p{
 	font-size: 14px;
 	color: #FFFFFF;
+}
+
+#deadhead{
+float: left;
 }
 
 .opaque1 {	// for all other browsers

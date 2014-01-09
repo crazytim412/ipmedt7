@@ -50,13 +50,24 @@ class Avatar_model extends CI_Model
 	
 	function getGameOverScore($user_id)
 	{
-		$sql = "SELECT score FROM avatar WHERE user_id = ? LIMIT 1";
+		$sql = "SELECT score as endScore FROM avatar WHERE user_id = ? LIMIT 1";
 		
 		$result = $this->db->query($sql, $user_id);
-		$row = $result->row_array(); 
 		
-		return $row;
+		$row = $result->row_array();
+		
+		return $row['endScore'];
 	}
 	
+	function getGameOverDagen($user_id)
+	{
+		$sql = "SELECT day as endDay FROM avatar WHERE user_id = ?";
+		
+		$result = $this->db->query($sql, $user_id);
+		
+		$row = $result->row_array();
+		
+		return $row['endDay'];
+	}
 }
 ?>
