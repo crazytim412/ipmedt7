@@ -20,10 +20,10 @@ class Avatar extends CI_Controller {
 					$head_id = $this->input->post("headId");
 					$shirt_id = $this->input->post("bodyId");
 					$pants_id = $this->input->post("legsId");
-					//$gender = $this->input->post("gender");
-					$gender = "v";
+					$gender = $this->input->post("gender");
+					$skinColor = $this->input->post("skinColor");
 					
-					$this->avatar_model->setAvatarCreate($nickname, $head_id, $shirt_id, $pants_id, $gender);
+					$this->avatar_model->setAvatarCreate($nickname, $head_id, $shirt_id, $pants_id, $gender, $skinColor);
 					
 					redirect("/","refresh");
 					

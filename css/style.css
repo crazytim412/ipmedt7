@@ -717,7 +717,7 @@ height:100%;
 	width: 200px;
 	float: left;
 }
-.content_container #avaFemale {
+.content_container #avaFemale, .content_container #avaMale {
 	height: 400px;
 	float: right;
 	position: relative;
