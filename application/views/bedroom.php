@@ -1,6 +1,6 @@
 <?php $this->load->view("common/header_game"); ?>
 		<script type="text/javascript">
-			var energy = 1;
+			var energy = <?php echo $avatar_details['energy'];?>;
 			
 			var flashvars = {};
 			var params = {
@@ -70,9 +70,10 @@
 						}
 					?>
 				</p>
-					<a href="/index.php/bedroom/day"><p>Klik hier voor een nieuwe dag.</p></a>
+					<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
+					<div class="clear"><br></div>
+					<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
 				</div>
-				
 				<!--<form method="post" action="">		   
    				 <input type="submit" name="submit" value="submit"/>
 				</form>

@@ -121,6 +121,7 @@ class diary_model extends CI_Model
 		$sql = "SELECT score FROM avatar WHERE user_id = ?";
 		
 		$result = $this->db->query($sql, $user_id);
+		return $result;
 	}
 	
 	function getOldMood($user_id)
@@ -128,6 +129,7 @@ class diary_model extends CI_Model
 		$sql = "SELECT mood FROM avatar WHERE user_id = ?";
 		
 		$result = $this->db->query($sql, $user_id);
+		return $result;
 	}
 	
 	function getOldHealth($user_id)
@@ -135,6 +137,7 @@ class diary_model extends CI_Model
 		$sql = "SELECT health FROM avatar WHERE user_id = ?";
 		
 		$result = $this->db->query($sql, $user_id);
+		return $result;
 	}
 	
 	function setNewData($data)
@@ -150,5 +153,15 @@ class diary_model extends CI_Model
 		$this->db->query($sql, $query_values);
 	}
 	
+	function checkHealth($user_id)
+	{
+		$sql ="SELECT health as alive
+			   FROM avatar WHERE user_id = ?";
+		
+		$query = $this->db->query($sql, $user_id);
+		$row = $query->row_array();
+		
+		return $row['alive'];
+	}
 }
 ?>
