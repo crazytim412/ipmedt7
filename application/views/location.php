@@ -32,6 +32,10 @@
 						<span><?php echo $avatar_details['energy'];?></span>
 					</li>
 					<li>
+						<label>Gezondheid</label>
+						<span><?php echo $avatar_details['health'];?></span>
+					</li>
+					<li>
 						<label>Dag</label> 
 						<span><?php echo $avatar_details['day'];?></span>
 					</li>
@@ -73,16 +77,27 @@
 					
 					<a href="/index.php/location/exitlocation">Verlaat de kroeg</a>
 				</div>
-					
+				<?php if($avatar_details['gender'] == "v"):?>
 				<div id="avaFemale">
 					<div id="avaHead">
-						<div id="avaFace" style="background: #e29857 url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
-						<div id="avaNeck"></div>
+						<div id="avaFace" style="background: #<?php echo $avatar_details['skin_color'];?> url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
+						<div id="avaNeck" style="background: #<?php echo $avatar_details['skin_color'];?>"></div>
 					</div>
-					<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/1.png) center no-repeat;"></div>
-					<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/2.png) center no-repeat;"></div>
-					<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/3.png) center no-repeat;"></div>
+					<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/<?php echo $avatar_details['head_id'];?>.png) center no-repeat;"></div>
+					<div id="avaBody" style="background: url(/img/characters/vrouw/lichaam/<?php echo $avatar_details['shirt_id'];?>.png) center no-repeat;"></div>
+					<div id="avaLegs" style="background: url(/img/characters/vrouw/broek/<?php echo $avatar_details['pants_id'];?>.png) center no-repeat;"></div>
 				</div>
+				<?php else:?>
+				<div id="avaMale">
+					<div id="avaHead">
+						<div id="avaFaceMale" style="background: #<?php echo $avatar_details['skin_color'];?> url(/img/characters/man/emoties/blij.png) center 19px no-repeat;"></div>
+						<div id="avaNeck" style="background: #<?php echo $avatar_details['skin_color'];?>"></div>
+					</div>
+					<div id="avaHairMale" style="background: url(/img/characters/man/kapsels/<?php echo $avatar_details['head_id'];?>.png) center bottom no-repeat;"></div>
+					<div id="avaBody" style="background: url(/img/characters/man/lichaam/<?php echo $avatar_details['shirt_id'];?>.png) center no-repeat;"></div>
+					<div id="avaLegs" style="background: url(/img/characters/man/broek/<?php echo $avatar_details['pants_id'];?>.png) center no-repeat;"></div>
+				</div>
+				<?php endif;?>
 				<div class="clear"></div>
 			</div>
 		</div>

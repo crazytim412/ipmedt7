@@ -31,13 +31,14 @@ $(function () { //document ready
 		$("div#avaHair").attr("id","avaHairMale");
 		$("div#avaFace").attr("id","avaFaceMale");
 		$( '#avaHairMale' ).css( "background", "url(/img/characters/"+gender+"/kapsels/"+kapsel[counter1]+".png) center bottom no-repeat" );
-		$('input[type=text]#headId').val(lichaam[counter1]);
+		$('input[type=text]#headId').val(kapsel[counter1]);
 		
 		$( '#avaBody' ).css( "background", "url(/img/characters/"+gender+"/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
 		$('input[type=text]#bodyId').val(lichaam[counter2]);
 		
 		$( '#avaLegs' ).css( "background", "url(/img/characters/"+gender+"/broek/"+broek[counter3]+".png) center no-repeat" );
-		$('input[type=text]#legsId').val(lichaam[counter3]);
+		$('input[type=text]#legsId').val(broek[counter3]);
+		$('input[type=text]#gender').val("m");
 	});
 	
 	$('#pickFemale').click(function () {
@@ -47,13 +48,14 @@ $(function () { //document ready
 		$("div#avaHairMale").attr("id","avaHair");
 		$("div#avaFaceMale").attr("id","avaFace");
 		$( '#avaHair' ).css( "background", "url(/img/characters/"+gender+"/kapsels/"+kapsel[counter1]+".png) center no-repeat" );
-		$('input[type=text]#headId').val(lichaam[counter1]);
+		$('input[type=text]#headId').val(kapsel[counter1]);
 		
 		$( '#avaBody' ).css( "background", "url(/img/characters/"+gender+"/lichaam/"+lichaam[counter2]+".png) center no-repeat" );
 		$('input[type=text]#bodyId').val(lichaam[counter2]);
 		
 		$( '#avaLegs' ).css( "background", "url(/img/characters/"+gender+"/broek/"+broek[counter3]+".png) center no-repeat" );
-		$('input[type=text]#legsId').val(lichaam[counter3]);
+		$('input[type=text]#legsId').val(broek[counter3]);
+		$('input[type=text]#gender').val("v");
 	});
 
 	// the next line, of course, assumes you have an element with id="next"
@@ -126,28 +128,27 @@ function changeSkinColor(color){
 		$( '#avaFace' ).css( "background-color", "#"+color );
 	}
 	$( '#avaNeck' ).css( "background-color", "#"+color );
+	$('input[type=text]#skinColor').val(color);
 }
 
 </script>
+<script type="text/javascript">
+	var energy = 50;
+	
+	var flashvars = {};
+	var params = {
+		"quality": "high",
+		"scale" : "noborder",
+		"wmode": "transparent"
+	};
+	var attributes = {
+		"useExpressInstall" : false,
+		"doExpressInstall" : false
+	};
+	
+	swfobject.embedSWF("/swf/locationmap.swf", "background", "100%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
-<?php $this->load->view("common/header_game"); ?>
-		<script type="text/javascript">
-			var energy = 50;
-			
-			var flashvars = {};
-			var params = {
-				"quality": "high",
-				"scale" : "noborder",
-				"wmode": "transparent"
-			};
-			var attributes = {
-				"useExpressInstall" : false,
-				"doExpressInstall" : false
-			};
-			
-			swfobject.embedSWF("/swf/locationmap.swf", "background", "100%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
-
-		</script>
+</script>
 		<div id="map-container">
 			<div id="background">
 				
@@ -191,8 +192,10 @@ function changeSkinColor(color){
 							</div>
 							<input id="nickField" type="text" placeholder="Nickname.."  name="nickname" />
 							<input id="headId" type="text" name="headId" value="1" hidden />
-							<input id="bodyId" type="text" name="bodyId" value="2" hidden />
-							<input id="legsId" type="text" name="legsId" value="3" hidden />
+							<input id="bodyId" type="text" name="bodyId" value="1" hidden />
+							<input id="legsId" type="text" name="legsId" value="1" hidden />
+							<input id="gender" type="text" name="gender" value="m" hidden />
+							<input id="skinColor" type="text" name="skinColor" value="e29857" hidden />
 						</div>
 						<div id="headBlock" class="block">
 							<div class="leftArrow" id="prevHead"></div>
