@@ -16,6 +16,10 @@
 			swfobject.embedSWF("/swf/thuis_v1.swf", "background", "70%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
+		<audio autoplay loop id="musicPlayer">
+			<source src="/music/vrienden.mp3" type="audio/mpeg">
+			<source src="/music/vrienden.ogg" type="audio/ogg">
+		</audio>
 		<div id="map-container">
 			<div id="background">
 				

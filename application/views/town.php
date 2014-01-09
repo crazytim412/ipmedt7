@@ -1,7 +1,10 @@
 <?php $this->load->view("common/header_game"); ?>
+		<script>
+			document.getElementById("musicOnOffKnop").onclick = musicOnOff();
+		</script>
 		<script type="text/javascript">
 			var energy = <?php echo $avatar_details['energy'];?>;
-			
+						
 			var flashvars = {};
 			var params = {
 				"quality": "high",
@@ -14,8 +17,37 @@
 			};
 			
 			swfobject.embedSWF("/swf/locationmap.swf", "background", "100%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
-
 		</script>
+<!--		<script>
+			function StartOrStop(audioFile) {
+				var audie = document.getElementById("myAudio");
+				if (!audie.src || audie.src !== audioFile) audie.src = audioFile;
+				console.log(audie.paused);
+				if (audie.paused == false) {
+					console.log('pause');
+					audie.pause();
+				} else {
+					console.log('play');
+					audie.play();
+				}
+			}
+		</script>
+		
+		<audio autoplay id="myAudio"></audio> -->
+		<script>
+			function musicOnOff()
+			{
+				var audioPlayer = document.getElementById('musicPlayer');
+				if (audioPlayer.paused == false)
+					audioPlayer.pause();
+				else
+					audioPlayer.play();
+			}
+		</script>
+		<audio autoplay loop id="musicPlayer">
+			<source src="/music/kaart.mp3" type="audio/mpeg">
+			<source src="/music/kaart.ogg" type="audio/ogg">
+		</audio>
 		<div id="map-container">
 			<div id="background">
 				
@@ -50,6 +82,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="/settings/">Instellingen</a></li>
 						<li><a href="/index.php/logout/">Uitloggen</a></li>
+						<li><a href="#" onclick="StartOrStop('/music/kaart.mp3')">Muziek aan/uit</a></li>
 					</ul>
 				</div>
 				<div class="clear"></div>

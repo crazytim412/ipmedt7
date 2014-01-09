@@ -16,6 +16,10 @@
 			swfobject.embedSWF("/swf/bar_v1.swf", "background", "50%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
+		<audio autoplay loop id="musicPlayer">
+			<source src="/music/bar.mp3" type="audio/mpeg">
+			<source src="/music/bar.ogg" type="audio/ogg">
+		</audio>
 		<div id="map-container">
 			<div id="background">
 			</div>

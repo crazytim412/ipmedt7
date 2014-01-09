@@ -7,5 +7,13 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
 		<script type="text/javascript" src="/js/swfobjects.js"></script>
+		<script src="/js/jquery.audiotag.js" type="text/javascript"></script>
+		<script src="/js/jquery.js" type="text/javascript"></script>
+		<script src="/audiojs/audio.min.js"></script>
 	</head>
 	<body>
+		<script>
+			audiojs.events.ready(function() {
+			var as = audiojs.createAll();
+			});
+		</script>
