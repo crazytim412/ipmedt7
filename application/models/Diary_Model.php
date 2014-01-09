@@ -94,14 +94,26 @@ class diary_model extends CI_Model
 		return $row['tot'];
 	}
 	
-	function getComsumptions($user_id, $day)
+	function getConsumptions($user_id, $day)
 	{
 		$sql = "SELECT c.name
 				FROM diary d 
 				JOIN consumptions c ON d.consumption_id = c.id
 				WHERE d.user_id = ? and d.day = ?";
 		
-		$result = $this->db->query($sql, array($user_id, $day));	
+		$query = $this->db->query($sql, array($user_id, $day));
+		$check = $query;
+		
+		$result =$query->result_array();
+		if($check->num_rows() > 0)
+		{
+			return $result;
+		}
+		else
+		{
+			$leeg = array("U heeft nog niets gedronken.");
+			return $leeg;
+		}
 	}
 	
 	function getOldScore($user_id)

@@ -21,13 +21,13 @@
                     <td><input name="passwordrepeat" value="" type="password" placeholder="Wachtwoord nogmaals" /></td>
                 </tr>
 				<tr>
-                    <td><input name="day" value="" type="number" min="1" max="31" placeholder="Geboorte Dag" /></td>
+                    <td><input name="day" value="" type="number" min="1" max="31" placeholder="Geboortedag" /></td>
                 </tr>
 				<tr>
-                    <td><input name="month" value="" type="number" min="1" max="12" placeholder="Geboorte Maand" /></td>
+                    <td><input name="month" value="" type="number" min="1" max="12" placeholder="Geboortemaand" /></td>
                 </tr>
 				<tr>
-                    <td><input name="year" value="" type="number" min="1900" max="2014" placeholder="Geboorte Jaar" /></td>
+                    <td><input name="year" value="" type="number" min="1900" max="2014" placeholder="Geboortejaar" /></td>
                 </tr>
                 <tr>
                     <td><input class="but1" type="submit" value="Verzenden" /></td>
