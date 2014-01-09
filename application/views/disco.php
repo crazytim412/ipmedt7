@@ -18,8 +18,10 @@
 			swfobject.embedSWF("/swf/disco_v1.swf", "background", "70%", "100%", "9.0.0","expressInstall.swf", flashvars, params, attributes);
 
 		</script>
-		
-		
+		<audio autoplay loop id="musicPlayer">
+			<source src="/music/disco.mp3" type="audio/mpeg">
+			<source src="/music/disco.ogg" type="audio/ogg">
+		</audio>
 		<div id="map-container">
 			<div id="background">
 				
