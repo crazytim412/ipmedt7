@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
         <title>Konscio Game</title>
     </head>
     <body>

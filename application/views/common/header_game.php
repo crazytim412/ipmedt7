@@ -10,6 +10,8 @@
 		<script src="/js/jquery.audiotag.js" type="text/javascript"></script>
 		<script src="/js/jquery.js" type="text/javascript"></script>
 		<script src="/audiojs/audio.min.js"></script>
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 	</head>
 	<body>
 		<script>
