@@ -15,6 +15,8 @@ class Bedroom extends CI_Controller {
 			$data['consumptions_name'] = $this->diary_model->getConsumptions($day, $this->session->userdata('user_id'));
 		
 			$this->load->view("bedroom", $data);
+			
+			$health_check = 0;
 		}
 		else
 		{
@@ -39,6 +41,9 @@ class Bedroom extends CI_Controller {
 			
 			if($alive > 0)
 			{
+				$health_check = 1;
+				$dataView['health_check'] = $health_check = 0;;				
+				
 				$day = $this->diary_model->getDay($user_id);
 				
 				$oudeDay = $day;
@@ -77,6 +82,7 @@ class Bedroom extends CI_Controller {
 				$this->diary_model->setNewData($data);
 
 				$dataView['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
+				$dataview['health'] = $newHealth;
 				
 				$day = $this->diary_model->getDay($this->session->userdata('user_id'));
 				$dataView['consumptions_name'] = $this->diary_model->getConsumptions($day, $this->session->userdata('user_id'));

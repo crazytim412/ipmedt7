@@ -64,8 +64,13 @@
 			
 			<div class="content_container">
 				<div class="text-container">
+				<?php	$type = $this->session->userdata('type');
+						if($type == 'bar') { ?>
+					<audio autoplay loop id="musicPlayer">
+						<source src="/music/bar.mp3" type="audio/mpeg">
+						<source src="/music/bar.ogg" type="audio/ogg">
+					</audio>
 					<b><div class="error_message"></div></b><br><br>
-					
 					Welkom in de kroeg<br>
 					U heeft nog <span class="consumptions_left"><?php echo $this->session->userdata("consumptions_left"); ?></span> consumpties over.
 					<br><br>
@@ -75,7 +80,59 @@
 						<?php endforeach; ?><br><br>
 					</div>
 					
-					<a href="/index.php/location/exitlocation">Verlaat de kroeg</a>
+					<a href="/index.php/location/exitlocation"><button type="button" class="but2">Het is tijd om de kroeg te verlaten.</button></a>
+					
+					<?php } else if($type == 'disco') { ?>
+					<audio autoplay loop id="musicPlayer">
+						<source src="/music/disco.mp3" type="audio/mpeg">
+						<source src="/music/disco.ogg" type="audio/ogg">
+					</audio>
+					<b><div class="error_message"></div></b><br><br>
+					BOOGEY! Welkom in de disco.<br>
+					U heeft nog <span class="consumptions_left"><?php echo $this->session->userdata("consumptions_left"); ?></span> consumpties over.
+					<br><br>
+					<div class="consumptions">
+						<?php foreach($consumptions->result() as $row): ?>
+						<a href="#" data-id="<?php echo $row->id; ?>" class="consumption">Neem een <?php echo $row->name; ?> (<?php echo $row->consumption_weight; ?>) </a><br>
+						<?php endforeach; ?><br><br>
+					</div>
+					
+					<a href="/index.php/location/exitlocation"><button type="button" class="but2">Verlaat de disco fever!</button></a>
+					
+					<?php } else if($type == 'vrienden') { ?>
+					<audio autoplay loop id="musicPlayer">
+						<source src="/music/vrienden.mp3" type="audio/mpeg">
+						<source src="/music/vrienden.ogg" type="audio/ogg">
+					</audio>
+					<b><div class="error_message"></div></b><br><br>
+					Je vrienden heetten je van harte welkom.<br>
+					U heeft nog <span class="consumptions_left"><?php echo $this->session->userdata("consumptions_left"); ?></span> consumpties over.
+					<br><br>
+					<div class="consumptions">
+						<?php foreach($consumptions->result() as $row): ?>
+						<a href="#" data-id="<?php echo $row->id; ?>" class="consumption">Neem een <?php echo $row->name; ?> (<?php echo $row->consumption_weight; ?>) </a><br>
+						<?php endforeach; ?><br><br>
+					</div>
+					
+					<a href="/index.php/location/exitlocation"><button type="button" class="but2">Ga terug naar buiten.</button></a>
+					<?php } else if($type == 'festival') { ?>
+					<audio autoplay="true" loop="true" hidden=true id="musicPlayer">
+						<source src="/music/festival.mp3" type="audio/mpeg">
+						<source src="/music/festival.ogg" type="audio/ogg">
+					</audio>
+					<b><div class="error_message"></div></b><br><br>
+					Je loopt het terrein op. Je voelt gelijk de festival sfeer.<br>
+					U heeft nog <span class="consumptions_left"><?php echo $this->session->userdata("consumptions_left"); ?></span> consumpties over.
+					<br><br>
+					<div class="consumptions">
+						<?php foreach($consumptions->result() as $row): ?>
+						<a href="#" data-id="<?php echo $row->id; ?>" class="consumption">Neem een <?php echo $row->name; ?> (<?php echo $row->consumption_weight; ?>) </a><br>
+						<?php endforeach; ?><br><br>
+					</div>
+					
+					<a href="/index.php/location/exitlocation"><button type="button" class="but2">Duw door de massa heen om van het terrein te gaan</button></a>
+					<?php } ?>
+					
 				</div>
 				<?php if($avatar_details['gender'] == "v"):?>
 				<div id="avaFemale">

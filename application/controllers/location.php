@@ -6,7 +6,7 @@ class Location extends CI_Controller {
 	{
 		// Kijken of de user al ingelogd is
 		if($this->session->userdata("user_id"))
-		{			
+		{	
 			if($this->session->userdata("inside_location") == true)
 			{
 				$this->load->model("avatar_model");
@@ -99,10 +99,32 @@ class Location extends CI_Controller {
 		
 		if($data['avatar_details']['energy'] >= 20)
 		{
-			$this->session->set_userdata("inside_location",true);
-			$this->session->set_userdata("consumptions_left",10);
 			$this->session->set_userdata("type", $type);
-			$data['avatar_details']['energy'] -= 20;
+			$this->session->set_userdata("inside_location",true);
+			
+			if($type == 'bar')
+			{
+				$data['avatar_details']['energy'] -= 20;
+				$this->session->set_userdata("consumptions_left",10);
+			}
+			else if($type == 'festival')
+			{
+				$data['avatar_details']['energy'] -= 75;
+				$this->session->set_userdata("inside_location",true);
+				$this->session->set_userdata("consumptions_left",20);
+			}
+			else if($type == 'vrienden')
+			{
+				$data['avatar_details']['energy'] -= 25;
+				$this->session->set_userdata("inside_location",true);
+				$this->session->set_userdata("consumptions_left",10);
+			}
+			else if($type == 'disco')
+			{
+				$data['avatar_details']['energy'] -= 40;
+				$this->session->set_userdata("inside_location",true);
+				$this->session->set_userdata("consumptions_left",10);
+			}
 			
 			$this->avatar_model->setAvatarDetails($data['avatar_details']);
 			
