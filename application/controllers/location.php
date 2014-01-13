@@ -6,7 +6,7 @@ class Location extends CI_Controller {
 	{
 		// Kijken of de user al ingelogd is
 		if($this->session->userdata("user_id"))
-		{			
+		{	
 			if($this->session->userdata("inside_location") == true)
 			{
 				$this->load->model("avatar_model");
