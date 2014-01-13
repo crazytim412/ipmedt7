@@ -116,7 +116,7 @@
 					
 					<a href="/index.php/location/exitlocation"><button type="button" class="but2">Ga terug naar buiten.</button></a>
 					<?php } else if($type == 'festival') { ?>
-					<audio autoplay loop id="musicPlayer">
+					<audio autoplay="true" loop="true" hidden=true id="musicPlayer">
 						<source src="/music/festival.mp3" type="audio/mpeg">
 						<source src="/music/festival.ogg" type="audio/ogg">
 					</audio>
