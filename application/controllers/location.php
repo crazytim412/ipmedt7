@@ -102,7 +102,23 @@ class Location extends CI_Controller {
 			$this->session->set_userdata("inside_location",true);
 			$this->session->set_userdata("consumptions_left",10);
 			$this->session->set_userdata("type", $type);
-			$data['avatar_details']['energy'] -= 20;
+			
+			if($type == 'kroeg')
+			{
+				$data['avatar_details']['energy'] -= 20;
+			}
+			else if($type == 'festival')
+			{
+				$data['avatar_details']['energy'] -= 75;
+			}
+			else if($type == 'vrienden')
+			{
+				$data['avatar_details']['energy'] -= 25;
+			}
+			else if($type == 'disco')
+			{
+				$data['avatar_details']['energy'] -= 40;
+			}
 			
 			$this->avatar_model->setAvatarDetails($data['avatar_details']);
 			
