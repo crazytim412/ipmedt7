@@ -32,7 +32,7 @@ class Gameover extends CI_Controller {
 	
 	public function end()
 	{
-		$user_id = $this->session->userdate("user_id");
+		$user_id = $this->session->userdata('user_id');
 		$this->load->model("user_model");
 		
 		$this->user_model->gameover($user_id);

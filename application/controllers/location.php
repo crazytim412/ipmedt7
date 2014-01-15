@@ -110,11 +110,11 @@ class Location extends CI_Controller {
 		if($data['avatar_details']['energy'] >= 20)
 		{
 			$this->session->set_userdata("type", $type);
-			$this->session->set_userdata("inside_location",true);
 			
 			if($type == 'bar' && $data['avatar_details']['energy'] >= 20)
 			{
 				$data['avatar_details']['energy'] -= 20;
+				$this->session->set_userdata("inside_location",true);
 				$this->session->set_userdata("consumptions_left",10);
 			}
 			else if($type == 'festival' && $data['avatar_details']['energy'] >= 75)
