@@ -16,14 +16,11 @@ class Location extends CI_Controller {
 				$this->load->model("consumptions_model");
 				
 				$ra = array(0,0,0,0);
-				for ($i = 0; $i < 5;$i++) 
-				{
-					$nu = mt_rand(0,16);
-					if ($nu <= 4) 
-					{
-						$ra[$nu]++;
-					}
-				}
+				
+				$ra[0] = mt_rand(1,4);
+				$ra[1] = mt_rand(5,8);
+				$ra[2] = mt_rand(9,12);
+				$ra[3] = mt_rand(13,16);
 				
 				$data['consumptions'] = $this->consumptions_model->getAllConsumptions($ra);
 				
