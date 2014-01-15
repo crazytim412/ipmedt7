@@ -63,7 +63,7 @@
 			</div>
 			<div class="content_container">
 				<?php if(@$error_msg): ?>
-				U heeft onvoldoende energie om de kroeg binnen te treden.<br><br>
+				U heeft onvoldoende energie om de <?php echo $type ?> binnen te treden.<br><br>
 				
 				<a href="/index.php">Klik hier om terug te keren</a>
 				<?php else: ?>
