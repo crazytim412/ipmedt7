@@ -20,9 +20,11 @@ class consumptions_model extends CI_Model
 	
 	function getAllConsumptions($ra)
 	{
-		$sql = "SELECT * FROM consumptions WHERE id = ? || ? || ? || ?";
+		$sql = "SELECT * FROM consumptions WHERE id = ? OR id = ? OR id = ? OR id = ?";
 		
-		return $this->db->query($sql, $ra);
+		$result = $this->db->query($sql, $ra);
+		
+		return $result;
 	}
 }
 ?>
