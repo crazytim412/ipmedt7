@@ -108,9 +108,13 @@
 					<div id="cF2">
 						<div id="creationInfo">
 							<h2>Creëer nu je eigen avatar personage.</h2>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</br></br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod.
+							De keuzes die je maakt hebben invloed op je humeur, energie en gezondheid, blijf daarom nadenken bij wat je nuttigt.
+							Op het hoofdscherm kan je kiezen om de verschillende locaties binnen te gaan, let op dat je genoeg energie hebt!</br></br>
+							Voor meer info over drugs, check de bijbehorende App:</br></br>
+							<a href="http://konscio.nl/app/konscio1.apk">
+								<div class="androidApp">Download <b>Android App</b></div>
+							</a>
+							</br></br>
 						</div>
 						<div class="button2"></div>
 							<input class="but1" type="submit" value="Aanmaken" />

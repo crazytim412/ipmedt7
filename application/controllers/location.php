@@ -79,6 +79,31 @@ class Location extends CI_Controller {
 			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
+			//bereken emotie
+			if($data['avatar_details']['energy'] == 50){
+				$emotie = "verward";
+			}
+			elseif($data['avatar_details']['energy'] <= 20){
+				$emotie = "moe";
+			}
+			elseif($data['avatar_details']['energy'] > 100){
+				$emotie = "strak";
+			}
+			elseif($data['avatar_details']['energy'] >= 90){
+				$emotie = "blij";
+			}
+			
+			//overrule andere emoties HUMEUR overruled ENERGIE
+			if($data['avatar_details']['mood'] == 30){
+				$emotie = "bedroefd";
+			}
+			elseif($data['avatar_details']['mood'] <= 20){
+				$emotie = "angstig";
+			}
+			elseif($data['avatar_details']['mood'] >= 90){
+				$emotie = "blij";
+			}
+			
 			$this->diary_model->addDiaryDetails($consumption_id, $type, $data['avatar_details']['day'], time());
 			
 			$this->session->set_userdata('consumptions_left', $consumptions_left-1);
