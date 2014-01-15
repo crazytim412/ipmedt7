@@ -13,10 +13,11 @@ class Bedroom extends CI_Controller {
 			
 			$day = $this->diary_model->getDay($this->session->userdata('user_id'));
 			$data['consumptions_name'] = $this->diary_model->getConsumptions($day, $this->session->userdata('user_id'));
-		
-			$this->load->view("bedroom", $data);
 			
 			$health_check = 0;
+			$data['health_check'] = $health_check;
+		
+			$this->load->view("bedroom", $data);
 		}
 		else
 		{
@@ -42,7 +43,7 @@ class Bedroom extends CI_Controller {
 			if($alive > 0)
 			{
 				$health_check = 1;
-				$dataView['health_check'] = $health_check = 0;;				
+				$dataView['health_check'] = $health_check;				
 				
 				$day = $this->diary_model->getDay($user_id);
 				
@@ -91,7 +92,7 @@ class Bedroom extends CI_Controller {
 			}
 			else
 			{
-				redirect("/index.php/gameover","refresh");
+				redirect("/gameover","refresh");
 			}
 		}
 		else

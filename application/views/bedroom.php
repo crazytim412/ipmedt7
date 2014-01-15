@@ -65,7 +65,7 @@
 				</div>
 				<div class="content_container">
 					<?php	if($health_check == 1) { ?>
-						<?php if($health < -30) { ?>
+						<?php if($avatar_details['health'] < -30) { ?>
 							<p>
 								Je zit er helemaal naast. Als je zo doorgaat, overleef je het niet lang.<br>
 								Probeer eens wat minder slechte drankjes en drugs.
@@ -73,7 +73,7 @@
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health > -30 && $health < -20) { ?>
+						<?php } else if($avatar_details['health'] > -30 && $avatar_details['health'] < -20) { ?>
 							<p>
 								Je hebt redelijk veel slechte dingen gedaan. Dit levert je allemaal<br>
 								negatieve effecten op. Probeer eens wat afwisseling tussen goed en slecht.
@@ -81,7 +81,7 @@
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= -20 && $health < -10) { ?>
+						<?php } else if($avatar_details['health'] >= -20 && $avatar_details['health'] < -10) { ?>
 							<p>
 								De hoeveelheid dranks en/of drugs is niet al te hoog, maar is niet gezond geweest.<br>
 								Ga eens een dagje gezonde consumpties doen.
@@ -89,49 +89,49 @@
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= -10 && $health < 0) { ?>
+						<?php } else if($avatar_details['health'] >= -10 && $avatar_details['health'] < 0) { ?>
 							<p>
 								Net niet goed. Neem eens wat minder pillen of wat minder sterke dranken.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= 0 && $health < 10) { ?>
+						<?php } else if($avatar_details['health'] >= 0 && $avatar_details['health'] < 10) { ?>
 							<p>
 								Neutraal. Niet goed of slecht. Probeer de balans te vinden tussen gezond en sociaal.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= 10 && $health < 20) { ?>
+						<?php } else if($avatar_details['health'] >= 10 && $avatar_details['health'] < 20) { ?>
 							<p>
 								Je hebt de gezonde kant van het uitgaan gevonden. Nu nog iets gezonder, afwisselender en socialer.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= 20 && $health < 30) { ?>
+						<?php } else if($avatar_details['health'] >= 20 && $avatar_details['health'] < 30) { ?>
 							<p>
 								Je bent redelijk goed bezig. Misschien iets minder drugs of sterke drank zal je goed doen.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= 30 && $health < 40) { ?>
+						<?php } else if($avatar_details['health'] >= 30 && $avatar_details['health'] < 40) { ?>
 							<p>
 								Je bent goed op weg. Je mag iets gezonder doen en natuurlijk sociaal blijven.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health >= 40 && $health < 50) { ?>
+						<?php } else if($avatar_details['health'] >= 40 && $avatar_details['health'] < 50) { ?>
 							<p>
 								Bijna helemaal perfect. Probeer eens wat gezelliger te doen.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($health > 50) { ?>
+						<?php } else if($avatar_details['health'] > 50) { ?>
 							<p>
 								Je hebt het helemaal door. Je kiest de juiste dingen uit, maar gedraagd je ook sociaal.<br>
 								Ga zo door !
@@ -156,13 +156,6 @@
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
 					<?php } ?>
 				</div>
-				<!--<form method="post" action="">		   
-   				 <input type="submit" name="submit" value="submit"/>
-				</form>
-				
-			<input action="" type="post" name="option1" value="Optie 1" id="optie1" /> -->				
-				
-
 				</div>
 			</div>
 		</div>

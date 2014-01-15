@@ -67,8 +67,8 @@
 				<?php	$type = $this->session->userdata('type');
 						if($type == 'bar') { ?>
 					<audio autoplay loop id="musicPlayer">
-						<source src="/music/bar.mp3" type="audio/mpeg">
-						<source src="/music/bar.ogg" type="audio/ogg">
+						<source src="/music/kroeg.mp3" type="audio/mpeg">
+						<source src="/music/kroeg.ogg" type="audio/ogg">
 					</audio>
 					<b><div class="error_message"></div></b><br><br>
 					Welkom in de kroeg<br>

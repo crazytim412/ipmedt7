@@ -118,26 +118,32 @@ class diary_model extends CI_Model
 	
 	function getOldScore($user_id)
 	{
-		$sql = "SELECT score FROM avatar WHERE user_id = ?";
+		$sql = "SELECT score as oldScore FROM avatar WHERE user_id = ?";
 		
 		$result = $this->db->query($sql, $user_id);
-		return $result;
+		$row = $result->row_array();
+		
+		return $row['oldScore'];
 	}
 	
 	function getOldMood($user_id)
 	{
-		$sql = "SELECT mood FROM avatar WHERE user_id = ?";
+		$sql = "SELECT mood as oldMood FROM avatar WHERE user_id = ?";
 		
 		$result = $this->db->query($sql, $user_id);
-		return $result;
+		$row = $result->row_array();
+		
+		return $row['oldMood'];
 	}
 	
 	function getOldHealth($user_id)
 	{
-		$sql = "SELECT health FROM avatar WHERE user_id = ?";
+		$sql = "SELECT health as oldHealth FROM avatar WHERE user_id = ?";
 		
 		$result = $this->db->query($sql, $user_id);
-		return $result;
+		$row = $result->row_array();
+		
+		return $row['oldHealth'];
 	}
 	
 	function setNewData($data)
