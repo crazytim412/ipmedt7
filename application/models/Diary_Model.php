@@ -154,12 +154,32 @@ class diary_model extends CI_Model
 	function setNewData($data)
 	{
 		$sql = "UPDATE avatar SET `mood` = ?, `score` = ?, `health` = ?, `energy` = ? WHERE `user_id` = ? ";
-		
-		
-		print $sql;
+
 		$user_id = $this->session->userdata("user_id");
 		
 		$query_values = array($data['mood'], $data['score'], $data['health'], $data['energy'], $user_id);
+		
+		$this->db->query($sql, $query_values);
+	}
+	
+	public function setNewHealth($newHealth)
+	{
+		$sql = "UPDATE avatar SET `health` = ? WHERE `user_id` = ? ";
+		
+		$user_id = $this->session->userdata("user_id");
+		
+		$query_values = array($newHealth, $user_id);
+		
+		$this->db->query($sql, $query_values);
+	}
+	
+	public function setNewMood($newMood)
+	{
+		$sql = "UPDATE avatar SET `mood` = ? WHERE `user_id` = ? ";
+
+		$user_id = $this->session->userdata("user_id");
+		
+		$query_values = array($newMood, $user_id);
 		
 		$this->db->query($sql, $query_values);
 	}
