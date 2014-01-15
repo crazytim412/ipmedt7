@@ -757,3 +757,19 @@ float: left;
 	position: relative;
 	padding: 0px;
 }
+
+a{
+	text-decoration: none;
+}
+
+.androidApp{
+	padding: 10px;
+	background: #20b403;
+	border-radius: 4px;
+	text-align: center;
+	color: #fff;
+}
+
+.androidApp:hover{
+	background: #46bd12;
+}

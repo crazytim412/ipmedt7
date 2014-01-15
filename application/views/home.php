@@ -26,11 +26,13 @@
     </div>
     <div id="welcomeMsg">
         <h1>Speel gratis deze alcohol & drugs sim, registreer je direct!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p>Creëer je eigen persoonlijke avatar en stap in een wereld vol feest. 
+			Leid je eigen leven en ontdek de gevaren van alcohol en drugs.
+		</p>
+		<a href="http://konscio.nl/app/konscio1.apk">
+			<div class="androidApp">Klik hier om de bijbehorende <b>Android App</b> te downloaden</div>
+		</a>
+        
     </div>
 </div>
 <?php $this->load->view("common/footer");?>

@@ -24,10 +24,10 @@
     <div id="welcomeMsg">
         <h1>Speel gratis deze alcohol & drugs sim, registreer je direct!</h1>
     
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p>Creëer je eigen persoonlijke avatar en stap in een wereld vol feest. 
+			Leid je eigen leven en ontdek de gevaren van alcohol en drugs.
+			<br />
+			Klik hier om de bijbehorende android App te downloaden.
         </p>
     </div>
 </div>
