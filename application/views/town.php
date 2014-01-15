@@ -76,7 +76,15 @@
 						<span><?php echo $avatar_details['score'];?></span>
 					</li>
 				</ul>
-
+				<?php 
+				if($avatar_details['energy'] < 20){?>
+					<a href="/index.php/bedroom">
+						<div class="but3">
+							Je energie is bijna op, klik hier om naar huis te gaan en te slapen!
+						</div>
+					</a>
+				<?php 
+				}?>
 				<div id="optionsBut"></div>
 				<div id="optionsButMenu">
 					<ul class="dropdown-menu">
@@ -95,10 +103,10 @@
 			</div>
 			<div id="map">
 				<ul id="labels">
-					<li class="festival"><a href="/index.php/location/festival"><p>Festival</p></a></li>
-					<li class="disco"><a href="/index.php/location/disco"><p>Disco</p></a></li>
-					<li class="bar"><a href="/index.php/location/bar"><p>Bar</p></a></li>
-					<li class="friends"><a href="/index.php/location/vrienden"><p>Vrienden</p></a></li>
+					<li class="festival"><a href="/index.php/location/festival"><p>Festival <br/>(75% energie)</p></a></li>
+					<li class="disco"><a href="/index.php/location/disco"><p>Disco <br/>(40% energie)</p></a></li>
+					<li class="bar"><a href="/index.php/location/bar"><p>Bar <br/>(20% energie)</p></a></li>
+					<li class="friends"><a href="/index.php/location/vrienden"><p>Vrienden <br/>(25% energie)</p></a></li>
 					<li class="home"><a href="/index.php/bedroom"><p>Thuis</p></a></li>
 				</ul>
 			</div>
