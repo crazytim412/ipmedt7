@@ -56,4 +56,10 @@ class User_model extends CI_Model
 			return 'fout';
 		}
 	}
+	
+	public function gameover($user_id)
+	{
+		$sql = "UPDATE avatar SET `energy` = 100, `mood` = 100, `health` = 100, `score` = 0, `day` = 0 WHERE `user_id` = ? ";
+		$this->db->query($sql);
+	}
 }

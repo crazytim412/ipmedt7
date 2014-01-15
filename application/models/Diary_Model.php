@@ -97,22 +97,27 @@ class diary_model extends CI_Model
 	function getConsumptions($user_id, $day)
 	{
 		$sql = "SELECT c.name
-				FROM diary d 
+				FROM diary d
 				JOIN consumptions c ON d.consumption_id = c.id
 				WHERE d.user_id = ? and d.day = ?";
 		
 		$query = $this->db->query($sql, array($user_id, $day));
 		$check = $query;
-		
-		$result =$query->result_array();
+
 		if($check->num_rows() > 0)
 		{
-			return $result;
+			return $query;
 		}
 		else
 		{
-			$leeg = array("U heeft nog niets gedronken.");
-			return $leeg;
+			$sql = "SELECT c.name
+					FROM diary d
+					JOIN consumptions c ON d.consumption_id = c.id
+					WHERE d.user_id = 999 and d.day = 99";
+			
+			$result = $this->db->query($sql, array($user_id, $day));
+			
+			return $result;
 		}
 	}
 	

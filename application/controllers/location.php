@@ -75,15 +75,16 @@ class Location extends CI_Controller {
 			$this->load->model("avatar_model");
 			$this->load->model("diary_model");
 			
+			$type = $this->session->userdata("type");
+			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
-			$this->diary_model->addDiaryDetails($consumption_id, "Kroeg", $data['avatar_details']['day'], time());
+			$this->diary_model->addDiaryDetails($consumption_id, $type, $data['avatar_details']['day'], time());
 			
 			$this->session->set_userdata('consumptions_left', $consumptions_left-1);
 			
 			print $this->session->userdata("consumptions_left");
-			
-			redirect("/index.php/location","refresh");
+
 		}
 		else
 		{

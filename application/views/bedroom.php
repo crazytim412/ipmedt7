@@ -143,13 +143,11 @@
 					<?php } else { ?>
 							<p>
 							Je hebt tot nu toe deze consumpties tot je genomen:<br>
-							<?php 
-								foreach($consumptions_name as $cn)
-								{
-									echo $cn;
-									echo "<br>";
-								}
-							?>
+							
+							<?php foreach($consumptions_name->result() as $row): ?>
+							<?php echo $row->name; ?><br>
+							<?php endforeach; ?><br><br>
+						
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>

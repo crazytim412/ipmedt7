@@ -10,9 +10,9 @@ class Bedroom extends CI_Controller {
 			$this->load->model("diary_model");
 		
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
-			
 			$day = $this->diary_model->getDay($this->session->userdata('user_id'));
-			$data['consumptions_name'] = $this->diary_model->getConsumptions($day, $this->session->userdata('user_id'));
+			
+			$data['consumptions_name'] = $this->diary_model->getConsumptions($this->session->userdata('user_id'), $day);
 			
 			$health_check = 0;
 			$data['health_check'] = $health_check;
