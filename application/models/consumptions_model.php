@@ -18,11 +18,11 @@ class consumptions_model extends CI_Model
 		return $row;
 	}
 	
-	function getAllConsumptions()
+	function getAllConsumptions($ra)
 	{
-		$sql = "SELECT * FROM consumptions";
+		$sql = "SELECT * FROM consumptions WHERE id = ? || ? || ? || ?";
 		
-		return $this->db->query($sql);
+		return $this->db->query($sql, $ra);
 	}
 }
 ?>

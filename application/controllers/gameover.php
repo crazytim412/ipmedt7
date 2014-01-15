@@ -29,6 +29,15 @@ class Gameover extends CI_Controller {
 			$this->load->view('home');
 		}
 	}
+	
+	public function end()
+	{
+		$this->session->unset_userdata("username");
+		$this->session->unset_userdata("user_id");
+		
+		// Ververs de pagina om het inlogscherm te tonen
+		redirect("/","refresh");
+	}
 }
 
 /* End of file gameover.php */

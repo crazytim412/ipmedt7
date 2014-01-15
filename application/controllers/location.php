@@ -15,7 +15,17 @@ class Location extends CI_Controller {
 				$data['type'] = $this->session->userdata("type");
 				$this->load->model("consumptions_model");
 				
-				$data['consumptions'] = $this->consumptions_model->getAllConsumptions();
+				$ra = array(0,0,0,0);
+				for ($i = 0; $i < 5;$i++) 
+				{
+					$nu = mt_rand(0,16);
+					if ($nu <= 4) 
+					{
+						$ra[$nu]++;
+					}
+				}
+				
+				$data['consumptions'] = $this->consumptions_model->getAllConsumptions($ra);
 				
 				$this->load->view("location",$data);
 			}
