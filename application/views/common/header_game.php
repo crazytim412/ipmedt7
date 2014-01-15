@@ -8,7 +8,6 @@
 		<script type="text/javascript" src="/js/script.js"></script>
 		<script type="text/javascript" src="/js/swfobjects.js"></script>
 		<script src="/js/jquery.audiotag.js" type="text/javascript"></script>
-		<script src="/js/jquery.js" type="text/javascript"></script>
 		<script src="/audiojs/audio.min.js"></script>
 		
 		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
