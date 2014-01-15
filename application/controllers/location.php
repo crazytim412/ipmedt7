@@ -82,6 +82,8 @@ class Location extends CI_Controller {
 			$this->session->set_userdata('consumptions_left', $consumptions_left-1);
 			
 			print $this->session->userdata("consumptions_left");
+			
+			redirect("/index.php/location","refresh");
 		}
 		else
 		{
@@ -114,18 +116,27 @@ class Location extends CI_Controller {
 				$data['avatar_details']['energy'] -= 20;
 				$this->session->set_userdata("consumptions_left",10);
 			}
+		}
+		else if($data['avatar_details']['energy'] >= 75)
+		{
 			else if($type == 'festival')
 			{
 				$data['avatar_details']['energy'] -= 75;
 				$this->session->set_userdata("inside_location",true);
 				$this->session->set_userdata("consumptions_left",20);
 			}
+		}
+		else if($data['avatar_details']['energy'] >= 25)
+		{	
 			else if($type == 'vrienden')
 			{
 				$data['avatar_details']['energy'] -= 25;
 				$this->session->set_userdata("inside_location",true);
 				$this->session->set_userdata("consumptions_left",10);
 			}
+		}
+		else if($data['avatar_details']['energy'] >= 40)
+		{
 			else if($type == 'disco')
 			{
 				$data['avatar_details']['energy'] -= 40;
