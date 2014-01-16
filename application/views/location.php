@@ -137,7 +137,7 @@
 				<?php if($avatar_details['gender'] == "v"):?>
 				<div id="avaFemale">
 					<div id="avaHead">
-						<div id="avaFace" style="background: #<?php echo $avatar_details['skin_color'];?> url(/img/characters/vrouw/emoties/blij.png) center 29px no-repeat;"></div>
+						<div id="avaFace" style="background: #<?php echo $avatar_details['skin_color'];?> url(/img/characters/vrouw/emoties/<?php echo $emotie ?>.png) center 29px no-repeat;"></div>
 						<div id="avaNeck" style="background: #<?php echo $avatar_details['skin_color'];?>"></div>
 					</div>
 					<div id="avaHair" style="background: url(/img/characters/vrouw/kapsels/<?php echo $avatar_details['head_id'];?>.png) center no-repeat;"></div>
@@ -147,7 +147,7 @@
 				<?php else:?>
 				<div id="avaMale">
 					<div id="avaHead">
-						<div id="avaFaceMale" style="background: #<?php echo $avatar_details['skin_color'];?> url(/img/characters/man/emoties/blij.png) center 19px no-repeat;"></div>
+						<div id="avaFaceMale" style="background: #<?php echo $avatar_details['skin_color'];?> url(/img/characters/man/emoties/<?php echo $emotie ?>.png) center 19px no-repeat;"></div>
 						<div id="avaNeck" style="background: #<?php echo $avatar_details['skin_color'];?>"></div>
 					</div>
 					<div id="avaHairMale" style="background: url(/img/characters/man/kapsels/<?php echo $avatar_details['head_id'];?>.png) center bottom no-repeat;"></div>

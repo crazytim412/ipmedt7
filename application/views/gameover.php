@@ -71,6 +71,9 @@
 						<br>
 						<a href="<?php echo $link['linktotaal']; ?>" target="_blank">Deel jouw score op Facebook! <br>Daag jouw vrienden uit om je te verslaan.</a>
 						<div id="clear"></div>
+						<a href="http://survey.konsciogame.nl/index.php?survey=fb7121b" target="_blank">Zou u ons een plezier kunnen doen door 5 minuten van uw tijd te besteden,<br>
+						aan onze enquete</a>
+						<div id="clear"></div>
 						<a href="/index.php/gameover/end"><button type="button" class="but2">Ga terug naar het login scherm.</button></a>
 					</p>
 	
