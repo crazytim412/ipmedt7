@@ -564,7 +564,7 @@ height:100%;
 	display: none;
 	width: 996px;
 	margin: 0px auto;
-	background: #4c4047;
+	background: url('../img/avatar_creation_bg.png');
 	color: #fff;
 	font-family: arial;
 	font-size: 12px;
