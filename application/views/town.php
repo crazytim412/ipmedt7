@@ -97,7 +97,7 @@
 				<!--<canvas id="energymeter"></canvas>-->
 				<div id="energymeter">
 					<div class="bar"></div>
-					<span class="amount">100%</span>
+					<span class="amount"></span>
 					<span class="label">Energie</span>
 				</div>
 			</div>
