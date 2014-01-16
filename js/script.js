@@ -36,6 +36,7 @@ $(document).ready(function(){
 					{
 						$('.consumptions_left').text(data.consumptions_left);
 						$("#header_stats li").first().children("span").text(data.mood);
+						//$("#header_stats li").fifth().children("span").text(data.Score);
 						console.log(data);
 					}
 				}

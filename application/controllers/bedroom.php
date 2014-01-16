@@ -98,7 +98,8 @@ class Bedroom extends CI_Controller {
 				$day = $this->diary_model->getDay($this->session->userdata('user_id'));
 				$dataView['consumptions_name'] = $this->diary_model->getConsumptions($day, $this->session->userdata('user_id'));
 				
-				if($currentHealth < 0)
+				$healthCheck = $oldHealth + $newHealth;
+				if($healthCheck < 0)
 				{
 					redirect("/gameover","refresh");
 				}

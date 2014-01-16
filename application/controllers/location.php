@@ -94,6 +94,7 @@ class Location extends CI_Controller {
 			
 			$consumptions_left = $this->session->userdata('consumptions_left');
 			$consumption_weight = $this->diary_model->getConsumption($consumption_id);
+			//$consumption_score = $this->diary_model->getConsumptionScore($consumption_id);
 			
 			$type = $this->session->userdata("type");
 			
@@ -101,19 +102,16 @@ class Location extends CI_Controller {
 			
 			//bereken nieuwe emotie
 			$newmood = $data['avatar_details']['mood'] + $consumption_weight[0]['mood_affection'];
+			//$newScore = $data['avatar_details']['score'] + $consumption_score;
 			
 			$this->diary_model->setNewMood($newmood);
-			
-			//print_r($consumption_weight);
-			//print_r($data['avatar_details']);
-			//
 
 			$this->diary_model->addDiaryDetails($consumption_id, $type, $data['avatar_details']['day'], time());
 			
 			$this->session->set_userdata('consumptions_left', $consumptions_left - $consumption_weight[0]['consumption_weight']);
 			
 			print json_encode(array("consumptions_left" => $this->session->userdata("consumptions_left"), "mood" => $newmood));
-
+			//, "score" => $newScore
 		}
 		else
 		{

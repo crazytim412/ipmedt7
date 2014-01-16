@@ -131,8 +131,12 @@
 					</div>
 					
 					<a href="/index.php/location/exitlocation"><button type="button" class="but2">Duw door de massa heen om van het terrein te gaan</button></a>
+					<?php } else {?>
+						<audio autoplay loop id="musicPlayer">
+							<source src="/music/kaart.mp3" type="audio/mpeg">
+							<source src="/music/kaart.ogg" type="audio/ogg">
+						</audio>
 					<?php } ?>
-					
 				</div>
 				<?php if($avatar_details['gender'] == "v"):?>
 				<div id="avaFemale">
