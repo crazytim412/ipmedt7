@@ -78,8 +78,7 @@ class Bedroom extends CI_Controller {
 				}
 				
 				$currentMood = $oldMood + $newMood;
-				$currentHealth = $oldHealth + $newHealth;
-				$currentHealth = $currentHealth - 5;
+				$currentHealth = $newHealth + $oldHealth;
 				
 				//van uit gaand, dat $currentMood/$calMood een waarde tussen de 0,5 en 1,5 krijgt
 				$calMood = $currentMood;
