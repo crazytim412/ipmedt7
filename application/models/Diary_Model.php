@@ -116,6 +116,17 @@ class diary_model extends CI_Model
 		}
 	}
 	
+	function getConsumption($consumption_id)
+	{
+		$sql = "SELECT * FROM consumptions WHERE id = ?";
+		
+		$query = $this->db->query($sql, $consumption_id);
+		
+		$result = $query->result_array();
+		
+		return $result;
+	}
+	
 	function getOldScore($user_id)
 	{
 		$sql = "SELECT score as oldScore FROM avatar WHERE user_id = ?";

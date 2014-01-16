@@ -78,23 +78,22 @@ class Location extends CI_Controller {
 			$this->load->model("avatar_model");
 			$this->load->model("diary_model");
 			
+			// Get the consumption information
+			$consumption = $this->diary_model->getConsumption($consumption_id);
+
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
-			$this->diary_model->addDiaryDetails($consumption_id, "Kroeg", $data['avatar_details']['day'], time());
+			$this->diary_model->addDiaryDetails($consumption_id, $this->session->userdata("type"), $data['avatar_details']['day'], time());
 			
-			$this->session->set_userdata('consumptions_left', $consumptions_left-1);
+			
+			
+			$this->session->set_userdata('consumptions_left', $consumptions_left-$consumption[0]['consumption_weight']);
 			
 			print $this->session->userdata("consumptions_left");
 		}
 		else
 		{
-			$this->load->model("avatar_model");
-			
-			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
-			$data['type'] = $this->session->userdata("type");
-			$this->load->model("consumptions_model");
-				
-			$data['consumptions'] = $this->consumptions_model->getAllConsumptions();
+
 			
 			print -1;
 		}	
