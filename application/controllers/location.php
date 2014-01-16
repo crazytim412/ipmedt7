@@ -89,24 +89,30 @@ class Location extends CI_Controller {
 	{
 		if($this->session->userdata('consumptions_left') > 0)
 		{
-			$consumptions_left = $this->session->userdata('consumptions_left');
-			
 			$this->load->model("avatar_model");
 			$this->load->model("diary_model");
+			
+			$consumptions_left = $this->session->userdata('consumptions_left');
+			$consumption_weight = $this->diary_model->getConsumption($consumption_id);
 			
 			$type = $this->session->userdata("type");
 			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
-			//bereken emotie
+			//bereken nieuwe emotie
+			$newmood = $data['avatar_details']['mood'] + $consumption_weight[0]['mood_affection'];
 			
-			$consumption_weight = $this->diary_model->getConsumption($consumption_id);
+			$this->diary_model->setNewMood($newmood);
+			
+			//print_r($consumption_weight);
+			//print_r($data['avatar_details']);
+			//
 
 			$this->diary_model->addDiaryDetails($consumption_id, $type, $data['avatar_details']['day'], time());
 			
 			$this->session->set_userdata('consumptions_left', $consumptions_left - $consumption_weight[0]['consumption_weight']);
 			
-			print $this->session->userdata("consumptions_left");
+			print json_encode(array("consumptions_left" => $this->session->userdata("consumptions_left"), "mood" => $newmood));
 
 		}
 		else

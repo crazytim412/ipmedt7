@@ -25,18 +25,20 @@ $(document).ready(function(){
 	$(".consumptions .consumption").click(function(){
 		$.ajax({
 			url: "/index.php/location/consume/"+$(this).attr("data-id")+"/",
+			dataType: 'json',
 			success: function(data){
 				if ( console && console.log ) {
-					if(data == "-1")
+					if(data.consumptions_left == "-1")
 					{
 						$('.error_message').text("U heeft geen consumpties meer over, keer terug naar de stad.");
 					}
 					else
 					{
-						$('.consumptions_left').text(data);
+						$('.consumptions_left').text(data.consumptions_left);
+						$("#header_stats li").first().children("span").text(data.mood);
 						console.log(data);
 					}
-				}	
+				}
 			}
 		});
 	});
