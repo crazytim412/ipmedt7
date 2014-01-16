@@ -61,5 +61,8 @@ class User_model extends CI_Model
 	{
 		$sql = "UPDATE avatar SET `energy` = 100, `mood` = 100, `health` = 100, `score` = 0, `day` = 0 WHERE `user_id` = ? ";
 		$this->db->query($sql, $user_id);
+		
+		$sql = "DELETE FROM diary WHERE user_id = ?";
+		$this->db->query($sql, $user_id);
 	}
 }
