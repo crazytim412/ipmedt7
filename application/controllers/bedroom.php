@@ -79,6 +79,7 @@ class Bedroom extends CI_Controller {
 				
 				$currentMood = $oldMood + $newMood;
 				$currentHealth = $oldHealth + $newHealth;
+				$currentHealth = $currentHealth - 5;
 				
 				//van uit gaand, dat $currentMood/$calMood een waarde tussen de 0,5 en 1,5 krijgt
 				$calMood = $currentMood;
@@ -86,7 +87,7 @@ class Bedroom extends CI_Controller {
 				$calMood = $calMood + 0.5;
 				$newScore = $currentHealth * $calMood;
 				
-				$currentScore = $oldScore;
+				$currentScore = $oldScore + 10;
 				
 				$data = array("mood" => $currentMood, "score" => $currentScore, "health" => $currentHealth, "energy" => $newEnergy);
 				
@@ -102,11 +103,9 @@ class Bedroom extends CI_Controller {
 				if($healthCheck < 0)
 				{
 					redirect("/gameover","refresh");
-				}
-				else
-				{				
+				}			
+				
 				$this->load->view("bedroom",$dataView);
-				}
 			}
 			else
 			{
