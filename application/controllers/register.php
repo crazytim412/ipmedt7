@@ -34,7 +34,7 @@ class Register extends CI_Controller {
 				{
 					$data["error"]="Gefeliciteerd, je bent geregistreerd.";
 					sleep(10);
-					redirect("/avatar","refresh");
+					$this->load->view("login", $data);
 				}
 			}
 			else

@@ -24,12 +24,31 @@ class Location extends CI_Controller {
 				
 				$data['consumptions'] = $this->consumptions_model->getAllConsumptions($ra);
 				
-				$this->load->view("location",$data);
-			}
-			else
-			{
-				redirect("/","refresh");
-			}
+				if($data['avatar_details']['mood'] <= 10){
+				$data['emotie'] = "verward";
+				}
+				else if($data['avatar_details']['mood'] < 30 && $data['avatar_details']['mood'] > 10){
+					$data['emotie'] = "moe";
+				}
+				else if($data['avatar_details']['mood'] >= 100){
+					$data['emotie'] = "strak";
+				}
+				else if($data['avatar_details']['mood'] >= 80 && $data['avatar_details']['mood'] < 100){
+					$data['emotie'] = "blij";
+				}
+				else if($data['avatar_details']['mood'] <= 50 && $data['avatar_details']['mood'] >= 30){
+					$data['emotie'] = "bedroefd";
+				}
+				elseif($data['avatar_details']['mood'] < 80 && $data['avatar_details']['mood'] > 50){
+					$data['emotie'] = "angstig";
+				}
+				
+				$this->load->view("location", $data);
+				}
+				else
+				{
+					redirect("/","refresh");
+				}
 		}
 		// De user is nog niet ingelogd, toon het inlogscherm
 		else
@@ -80,29 +99,6 @@ class Location extends CI_Controller {
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));
 			
 			//bereken emotie
-			if($data['avatar_details']['energy'] == 50){
-				$emotie = "verward";
-			}
-			elseif($data['avatar_details']['energy'] <= 20){
-				$emotie = "moe";
-			}
-			elseif($data['avatar_details']['energy'] > 100){
-				$emotie = "strak";
-			}
-			elseif($data['avatar_details']['energy'] >= 90){
-				$emotie = "blij";
-			}
-			
-			//overrule andere emoties HUMEUR overruled ENERGIE
-			if($data['avatar_details']['mood'] == 30){
-				$emotie = "bedroefd";
-			}
-			elseif($data['avatar_details']['mood'] <= 20){
-				$emotie = "angstig";
-			}
-			elseif($data['avatar_details']['mood'] >= 90){
-				$emotie = "blij";
-			}
 			
 			$consumption_weight = $this->diary_model->getConsumption($consumption_id);
 
