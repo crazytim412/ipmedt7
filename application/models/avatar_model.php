@@ -47,27 +47,29 @@ class Avatar_model extends CI_Model
 		return $this->db->query($sql, $query_values);
 		
 	}
-	
-	function getGameOverScore($user_id)
+	// Duncan
+	// Haal de eind score op
+	function getGameOverScore($user_id) // Functie vereist user_id uit de controller 
 	{
-		$sql = "SELECT score as endScore FROM avatar WHERE user_id = ? LIMIT 1";
+		$sql = "SELECT score as endScore FROM avatar WHERE user_id = ? LIMIT 1"; // Maak de query
 		
-		$result = $this->db->query($sql, $user_id);
+		$result = $this->db->query($sql, $user_id); // Voer de query uit en zet resultaat in een variabel
 		
-		$row = $result->row_array();
+		$row = $result->row_array(); // Maak een row array
 		
-		return $row['endScore'];
+		return $row['endScore']; // Geef resultaat array terug
 	}
-	
-	function getGameOverDagen($user_id)
+	//Duncan
+	// Haal einddag op
+	function getGameOverDagen($user_id) // Functie vereist user_id uit de controller 
 	{
-		$sql = "SELECT day as endDay FROM avatar WHERE user_id = ?";
+		$sql = "SELECT day as endDay FROM avatar WHERE user_id = ?"; // Maak de query
 		
-		$result = $this->db->query($sql, $user_id);
+		$result = $this->db->query($sql, $user_id); // Voer de query uit en zet resultaat in een variabel
 		
-		$row = $result->row_array();
+		$row = $result->row_array(); // Maak een row array
 		
-		return $row['endDay'];
+		return $row['endDay']; // Geef resultaat array terug
 	}
 }
 ?>
