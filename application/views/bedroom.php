@@ -68,7 +68,7 @@
 						<?php if($avatar_details['health'] < 10) { ?>
 							<p>
 								Je zit er helemaal naast. Als je zo doorgaat, overleef je het niet lang.<br>
-								Probeer eens wat minder slechte drankjes en drugs.
+								Probeer eens een dag zonder slechte drankjes en drugs.
 							</p>
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
@@ -81,7 +81,7 @@
 							<a href="/index.php/bedroom/day"><button type="button" class="but2">Klik hier voor een nieuwe dag.</button></a>
 							<div class="clear"><br></div>
 							<a href="/"><button type="button" class="but2">Ga terug naar de kaart.</button></a>
-						<?php } else if($avatar_details['health'] >= -20 && $avatar_details['health'] < 30) { ?>
+						<?php } else if($avatar_details['health'] >= 20 && $avatar_details['health'] < 30) { ?>
 							<p>
 								De hoeveelheid dranks en/of drugs is niet al te hoog, maar is niet gezond geweest.<br>
 								Ga eens een dagje gezonde consumpties doen.

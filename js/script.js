@@ -28,9 +28,9 @@ $(document).ready(function(){
 			dataType: 'json',
 			success: function(data){
 				if ( console && console.log ) {
-					if(data.consumptions_left == "-1")
+					if(data == "-1")
 					{
-						$('.error_message').text("U heeft geen consumpties meer over, keer terug naar de stad.");
+						$('.error_message').text("U heeft onvoldoende consumpties, keer terug naar de stad of neem iets anders.");
 					}
 					else
 					{

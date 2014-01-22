@@ -87,15 +87,15 @@ class Location extends CI_Controller {
 	
 	public function consume($consumption_id)
 	{
-		if($this->session->userdata('consumptions_left') > 0)
-		{
-			$this->load->model("avatar_model");
-			$this->load->model("diary_model");
-			
-			$consumptions_left = $this->session->userdata('consumptions_left');
-			$consumption_weight = $this->diary_model->getConsumption($consumption_id);
-			//$consumption_score = $this->diary_model->getConsumptionScore($consumption_id);
-			
+		$this->load->model("avatar_model");
+		$this->load->model("diary_model");
+		
+		$consumptions_left = $this->session->userdata('consumptions_left');
+		$consumption_weight = $this->diary_model->getConsumption($consumption_id);
+		
+		
+		if($this->session->userdata('consumptions_left') >= $consumption_weight[0]['consumption_weight'])
+		{			
 			$type = $this->session->userdata("type");
 			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id'));

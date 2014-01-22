@@ -69,19 +69,15 @@ class Bedroom extends CI_Controller {
 				elseif($newHealth <= -20 && $newHealth > -40) 	$newEnergy = 80; // Als leven groter is dan -40 en kleiner of gelijk dan -20, zet energy op 80
 				elseif($newHealth <= -40 && $newHealth > -60)	$newEnergy = 60; // Als leven groter is dan -60 en kleiner of gelijk dan -40, zet energy op 60
 				elseif($newHealth <= -60 && $newHealth > -80)	$newEnergy = 50; // Als leven groter is dan -80 en kleiner of gelijk dan -60, zet energy op 50
-				else											
+				else											$newEnergy = 40;					
+
 				
-				if($dataView['avatar_details']['energy'] < 100) // Als energy lager is dan 100
-				{
-					$newEnergy = $dataView['avatar_details']['energy'] + 25; // Zet energie + 25
-				}
-				else // Anders
-				{
-					$newEnergy = $dataView['avatar_details']['energy']; // Hou energy op zelfde niveau
-				}
+				if($newEnergy > 100) $newEnergy = 100;
 				
 				$currentMood = $oldMood + $newMood; // Tel de moods bij elkaar op
 				$currentHealth = $newHealth + $oldHealth; // Tel alle even bij elkaar op (leven is meestal in het negatieve, +- wordt - )
+				
+				if($currentHealth > 100) $currentHealth = 100;
 				
 				//van uit gaand, dat $currentMood/$calMood een waarde tussen de 0,5 en 1,5 krijgt
 				$calMood = $currentMood; // Zet currentMood naar calMood

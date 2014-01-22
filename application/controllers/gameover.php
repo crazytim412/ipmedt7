@@ -18,7 +18,7 @@ class Gameover extends CI_Controller {
 			$score = $this->avatar_model->getGameOverScore($user_id); // Haal score op
 			$dagen = $this->avatar_model->getGameOverDagen($user_id); // Haal dag op
 		
-			$link = 'http://www.facebook.com/sharer/sharer.php?s=100&p[url]=https://www.facebook.com&p[images][0]=&p[title]=Kijk%20mijn%20highscore&p[summary]=';
+			$link = 'http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://development.konsciogame.nl&p[images][0]=&p[title]=Kijk%20mijn%20highscore&p[summary]=';
 			// Facebook API link, Tekst voor de link			
 			$data['avatar_details'] = $this->avatar_model->getAvatarDetails($this->session->userdata('user_id')); // Haal avatar details op
 			$data['link'] = array("linktotaal" => $link."Ik heb het ".$dagen." dagen volgehouden. Mijn score is ".$score.". Denk je dat je langer en beter kan leven dan ik? Speel dan nu op www.konscio.nl");
