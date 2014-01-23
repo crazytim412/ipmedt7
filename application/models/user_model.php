@@ -63,10 +63,10 @@ class User_model extends CI_Model
 	// Als speler game over gaat
 	public function gameover($user_id) // Functie vereist user_id uit de controller
 	{
-		$sql = "UPDATE avatar SET `energy` = 100, `mood` = 100, `health` = 100, `score` = 0, `day` = 0 WHERE `user_id` = ? "; // maak de query
-		$this->db->query($sql, $user_id); // Voer de query uit ( zet alles terug naar standaard waarde )
+		$sql = "UPDATE avatar SET `energy` = '100', `mood` = '100', `health` = '100', `score` = '0', `day` = '0' WHERE `user_id` = ?"; // maak de query
+		$this->db->query($sql, array($user_id)); // Voer de query uit ( zet alles terug naar standaard waarde )
 		
-		$sql = "DELETE FROM diary WHERE user_id = ?"; // Maak de query
-		$this->db->query($sql, $user_id); // Voer de query uit ( Verwijder de drankjes )
+		$sql2 = "DELETE FROM diary WHERE user_id = ?"; // Maak de query
+		$this->db->query($sql2, array($user_id)); // Voer de query uit ( Verwijder de drankjes )
 	}
 }
