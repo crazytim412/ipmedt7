@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	
+	// Wessel: Het instellingen menu tonen wanneer er op de button gedrukt wordt de status BLOCK geven.
 	$("#optionsBut").click(function(){
 		if($("#optionsButMenu").css("display") == "block")
 		{
@@ -14,6 +14,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	// Wessel: Als er buiten het menu wordt geklikt wanneer het menu open staan, menu sluiten.
 	$(document).click( function(event) {
 		// If somewhere outside of the multiselect was clicked then hide the multiselect
 
@@ -22,6 +23,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	// Wessel: Consumpties via jQuery laten verlopen. Er wordt een php script aangeroepen en een consumptie ID meegegeven.
 	$(".consumptions .consumption").click(function(){
 		$.ajax({
 			url: "/index.php/location/consume/"+$(this).attr("data-id")+"/",
@@ -34,6 +36,7 @@ $(document).ready(function(){
 					}
 					else
 					{
+						// Plaats de gereturnde json waarden in de juist containers
 						$('.consumptions_left').text(data.consumptions_left);
 						$("#header_stats li").first().children("span").text(data.mood);
 						//$("#header_stats li").fifth().children("span").text(data.Score);
@@ -50,9 +53,11 @@ $(document).ready(function(){
 	}
 });
 
+// Wessel
 $(window).load(function(){
 	if($("#energymeter").length != 0)
 	{
+		// berekenen van de hoogte van de meter in verhouding tot de waarde
 		$("#energymeter .amount").text(energy+"%");
 		$("#energymeter .bar").animate({ height: energy*2.8+"px"},1000)
 		console.log(energy);

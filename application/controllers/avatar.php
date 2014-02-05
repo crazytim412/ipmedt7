@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Avatar extends CI_Controller {
-
+	// Thom
 	public function index()
 	{
 		// Kijken of de user al ingelogd is

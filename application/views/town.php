@@ -35,6 +35,7 @@
 		
 		<audio autoplay id="myAudio"></audio> -->
 		<script>
+			// Thom, muziekplayer aanzettenw
 			function musicOnOff()
 			{
 				var audioPlayer = document.getElementById('musicPlayer');

@@ -26,7 +26,7 @@ class Bedroom extends CI_Controller {
 			redirect("/","refresh");
 		}
 	}
-	// Duncan
+	// Duncan & Wessel
 	// Maak een nieuwe dag aan
 	public function day() // Functie vereist niets
 	{

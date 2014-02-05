@@ -14,6 +14,7 @@
 	</head>
 	<body>
 		<script>
+			// Thom , audiojs aanmaken
 			audiojs.events.ready(function() {
 			var as = audiojs.createAll();
 			});
